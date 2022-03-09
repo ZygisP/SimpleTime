@@ -10,6 +10,11 @@
       "StackName": "amplify-simpletime-staging-163812",
       "StackId": "arn:aws:cloudformation:eu-west-2:155352936255:stack/amplify-simpletime-staging-163812/d0965f61-9d6b-11ec-a70e-029d630f3d88",
       "AmplifyAppId": "d3qkx9gjnlz5n0"
+    },
+    "categories": {
+      "auth": {
+        "SimpleTime": {}
+      }
     }
   }
 }
