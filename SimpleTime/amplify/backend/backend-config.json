@@ -53,5 +53,12 @@
         ]
       }
     }
+  },
+  "storage": {
+    "s3simpletimestorage5c64f62e": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
   }
 }

@@ -4,179 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundImage"
-    tools:context=".FirstFragment" >
-
-
-    <!--  Logo image view  -->
-    <ImageView
-        android:id="@+id/image_logo"
-        android:layout_width="135dp"
-        android:layout_height="135dp"
-        android:layout_marginTop="76dp"
-        android:src="@drawable/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ImageContrastCheck" />
-
-    <!--  SimpleTime text view  -->
-    <TextView
-        android:id="@+id/text_simpletime"
-        android:layout_width="260dp"
-        android:layout_height="51dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="235dp"
-        android:fontFamily="@font/tauri"
-        android:gravity="center_horizontal|top"
-        android:text="@string/simpletime"
-        android:textAppearance="@style/simpletime"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextContrastCheck" />
-
-
-    <!--  Log in button -->
-    <Button
-        android:id="@+id/btn_login"
-        style="@style/log_in"
-        android:layout_width="296dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="556dp"
-        android:background="@drawable/filledbutton"
-        android:elevation="4dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/log_in"
-        android:textAppearance="@style/log_in"
-        app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!--  Create an account button -->
-
-    <!--  Name text view  -->
-
-    <!--  Enter your name text input  -->
-
-    <Button
-        android:id="@+id/btn_createAcc"
-        style="@style/log_in"
-        android:layout_width="296dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="684dp"
-        android:background="@drawable/strokebuttonbold"
-        android:elevation="4dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/create_account"
-        android:textAppearance="@style/log_in"
-        app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".FirstFragment">
 
     <TextView
-        android:id="@+id/name"
-        android:layout_width="49dp"
-        android:layout_height="21dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="300dp"
-        android:fontFamily="@font/roboto"
-        android:gravity="top"
-        android:text="@string/name"
-        android:textAppearance="@style/name"
+        android:id="@+id/textview_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_first_fragment"
+        app:layout_constraintBottom_toTopOf="@id/button_first"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="295dp"
-        android:layout_height="55dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="329dp"
-        android:background="@drawable/strokebutton"
-        android:hint="@string/hint_name"
-        android:paddingStart="19dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="RtlSymmetry" />
-
-    <!--  Password text view  -->
-
-    <!--  Enter your password text input  -->
-
-    <TextView
-        android:id="@+id/password"
-        android:layout_width="81dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="408dp"
-        android:gravity="top"
-        android:text="@string/password"
-
-        android:textAppearance="@style/password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="295dp"
-        android:layout_height="55dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="438dp"
-        android:background="@drawable/strokebutton"
-        android:hint="@string/hint_password"
-        android:paddingStart="19dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="RtlSymmetry" />
-
-    <!--  Forgot password button  -->
-
-    <!--  Forgot username button  -->
-    <Button
-        android:id="@+id/btn_forgotPass"
-        style="@style/forgot_pass"
-        android:layout_width="156dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="492dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/forgot_pass"
-        android:textAppearance="@style/forgot_pass"
-        app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_forgotUsername"
-        style="@style/forgot_pass"
-        android:layout_width="158dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="492dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/forgot_username"
-        android:textAppearance="@style/forgot_pass"
-        app:backgroundTint="@null"
+        android:id="@+id/button_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.821"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@id/textview_first" />
 </androidx.constraintlayout.widget.ConstraintLayout>
