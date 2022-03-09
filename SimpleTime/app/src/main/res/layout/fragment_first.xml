@@ -13,9 +13,9 @@
         android:id="@+id/image_logo"
         android:layout_width="135dp"
         android:layout_height="135dp"
-        android:layout_marginStart="128dp"
         android:layout_marginTop="76dp"
         android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ImageContrastCheck" />
@@ -27,12 +27,12 @@
         android:layout_height="51dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="65dp"
         android:layout_marginTop="235dp"
         android:fontFamily="@font/tauri"
         android:gravity="center_horizontal|top"
         android:text="@string/simpletime"
         android:textAppearance="@style/simpletime"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
@@ -44,14 +44,14 @@
         style="@style/log_in"
         android:layout_width="296dp"
         android:layout_height="56dp"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="556dp"
         android:background="@drawable/filledbutton"
+        android:elevation="4dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/log_in"
         android:textAppearance="@style/log_in"
-        android:elevation="4dp"
         app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,19 +59,22 @@
 
     <!--  Name text view  -->
 
+    <!--  Enter your name text input  -->
+
     <Button
         android:id="@+id/btn_createAcc"
         style="@style/log_in"
         android:layout_width="296dp"
         android:layout_height="54dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="696dp"
+        android:layout_marginTop="684dp"
         android:background="@drawable/strokebuttonbold"
         android:elevation="4dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/create_account"
         android:textAppearance="@style/log_in"
         app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,62 +84,67 @@
         android:layout_height="21dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="300dp"
         android:fontFamily="@font/roboto"
         android:gravity="top"
         android:text="@string/name"
         android:textAppearance="@style/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--  Enter your name text input  -->
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="295dp"
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="329dp"
         android:background="@drawable/strokebutton"
         android:hint="@string/hint_name"
         android:paddingStart="19dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RtlSymmetry" />
 
     <!--  Password text view  -->
+
+    <!--  Enter your password text input  -->
+
     <TextView
         android:id="@+id/password"
         android:layout_width="81dp"
         android:layout_height="21dp"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="408dp"
         android:gravity="top"
         android:text="@string/password"
 
         android:textAppearance="@style/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--  Enter your password text input  -->
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="295dp"
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="438dp"
         android:background="@drawable/strokebutton"
         android:hint="@string/hint_password"
         android:paddingStart="19dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RtlSymmetry" />
 
     <!--  Forgot password button  -->
+
+    <!--  Forgot username button  -->
     <Button
         android:id="@+id/btn_forgotPass"
         style="@style/forgot_pass"
@@ -144,16 +152,16 @@
         android:layout_height="48dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="492dp"
-        android:text="@string/forgot_pass"
         android:fontFamily="@font/poppins_medium"
+        android:text="@string/forgot_pass"
         android:textAppearance="@style/forgot_pass"
         app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--  Forgot username button  -->
     <Button
         android:id="@+id/btn_forgotUsername"
         style="@style/forgot_pass"
@@ -161,12 +169,13 @@
         android:layout_height="48dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="184dp"
         android:layout_marginTop="492dp"
-        android:text="@string/forgot_username"
         android:fontFamily="@font/poppins_medium"
+        android:text="@string/forgot_username"
         android:textAppearance="@style/forgot_pass"
         app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.821"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
