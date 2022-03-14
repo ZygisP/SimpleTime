@@ -3,15 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/drawable-v24/strokebutton.xml" value="0.1365" />
-        <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/drawable-v24/strokebuttonbold.xml" value="0.5425" />
-        <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/drawable/smallbutton.xml" value="0.296" />
-        <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/activity_first_fragment.xml" value="0.1259259259259259" />
-        <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/activity_kazkas.xml" value="0.1259259259259259" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/drawable-v24/filledbutton.xml" value="0.138" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.138" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/drawable-v24/strokebutton.xml" value="0.138" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/drawable-v24/strokebuttonbold.xml" value="0.138" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/drawable/ic_launcher_background.xml" value="0.138" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/drawable/smallbutton.xml" value="0.138" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/font/poppins_medium.xml" value="0.25555555555555554" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/font/poppins_semibold.xml" value="0.25555555555555554" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/font/roboto.xml" value="0.25555555555555554" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/font/tauri.xml" value="0.25555555555555554" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/layout/activity_first_fragment.xml" value="0.14918946301925026" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/layout/activity_kazkas.xml" value="0.14918946301925026" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/layout/activity_main.xml" value="0.14918946301925026" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/layout/activity_user_control_java.xml" value="0.17831813576494426" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/layout/content_main.xml" value="0.17831813576494426" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/layout/fragment_first.xml" value="0.25" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/layout/fragment_second.xml" value="0.358695652173913" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.138" />
+        <entry key="..\:/SimpleTime/SimpleTime/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.138" />
         <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/content_main.xml" value="0.33" />
+        <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/content_main.xml" value="0.1" />
         <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/fragment_first.xml" value="0.25" />
-        <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/fragment_second.xml" value="0.33" />
       </map>
     </option>
   </component>
