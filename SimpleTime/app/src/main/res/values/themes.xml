@@ -70,4 +70,9 @@
         <item name="android:shadowDy">6</item>
         <item name="android:shadowRadius">2</item>
     </style>
+
+    <style name="submit">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">#25173A</item>
+    </style>
 </resources>
