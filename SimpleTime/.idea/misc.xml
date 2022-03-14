@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/drawable-v24/strokebutton.xml" value="0.1365" />
+        <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/drawable-v24/strokebuttonbold.xml" value="0.5425" />
+        <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/drawable/smallbutton.xml" value="0.296" />
         <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/content_main.xml" value="0.1" />
+        <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/content_main.xml" value="0.33" />
         <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/fragment_first.xml" value="0.25" />
+        <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/fragment_second.xml" value="0.33" />
       </map>
     </option>
   </component>
