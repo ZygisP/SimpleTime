@@ -8,6 +8,7 @@ import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.actionCodeSettings
 import kotlinx.android.synthetic.main.fragment_first.*
 import java.io.File
 
@@ -34,7 +35,11 @@ class MainActivity : AppCompatActivity() {
         login_btnLogin.setOnClickListener{
          login(it)
         }
+        login_btnForgotPassword.setOnClickListener{
+            val intent = Intent(this, ForgotPasswordActivity::class.java);
+            startActivity(intent)
 
+        }
     }
     fun login(view: View){
         val email=login_enterName.text.toString()
@@ -42,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
         auth.signInWithEmailAndPassword(email,password).addOnCompleteListener { task ->
             if(task.isSuccessful){
-                val intent= Intent(this,MainActivity::class.java)
+                val intent= Intent(this,LoadingScreenActivity::class.java)
                 startActivity(intent)
                 finish()
             }
@@ -50,5 +55,23 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(applicationContext,exception.localizedMessage, Toast.LENGTH_LONG).show()
         }
     }
-
+  private fun buildActionCodeSettings() {
+        // [START auth_build_action_code_settings]
+        val actionCodeSettings = actionCodeSettings {
+            // URL you want to redirect back to. The domain (www.example.com) for this
+            // URL must be whitelisted in the Firebase Console.
+            url = "https://www.example.com/finishSignUp?cartId=1234"
+            // This must be true
+            handleCodeInApp = true
+            setIOSBundleId("com.example.ios")
+            setAndroidPackageName(
+                "com.example.android",
+                true, /* installIfNotAvailable */
+                "12" /* minimumVersion */)
+        }
+        // [END auth_build_action_code_settings]
     }
+
+
+
+}
