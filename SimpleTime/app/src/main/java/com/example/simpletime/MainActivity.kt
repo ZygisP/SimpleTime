@@ -2,14 +2,11 @@ package com.example.simpletime
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_first.*
-import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         login_btnCreateAcc.setOnClickListener{
             val intent = Intent(this, SecondFragment::class.java);
             startActivity(intent)
-
         }
 
         login_btnLogin.setOnClickListener{
