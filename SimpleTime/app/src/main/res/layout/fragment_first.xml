@@ -7,8 +7,6 @@
     android:background="@drawable/backgroundimage"
     tools:context=".FirstFragment" >
 
-
-
     <!--  Logo image view  -->
     <ImageView
         android:id="@+id/image_logo"
@@ -138,6 +136,7 @@
         android:background="@drawable/strokebutton"
         android:hint="@string/hint_password"
         android:paddingStart="19dp"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

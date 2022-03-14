@@ -1,31 +1,34 @@
 package com.example.simpletime
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.amplifyframework.AmplifyException
 import com.amplifyframework.api.aws.AWSApiPlugin
-import com.amplifyframework.auth.AuthUserAttributeKey
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin
-import com.amplifyframework.auth.options.AuthSignUpOptions
 import com.amplifyframework.core.Amplify
 import com.amplifyframework.datastore.AWSDataStorePlugin
 import com.amplifyframework.datastore.generated.model.Users
 import com.amplifyframework.storage.s3.AWSS3StoragePlugin
-import com.example.simpletime.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.fragment_first.*
 import java.io.File
+
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMainBinding
+//    private lateinit var appBarConfiguration: AppBarConfiguration
+//    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        btn_createAcc.setOnClickListener{
+            val intent = Intent(this, SecondFragment::class.java);
+            startActivity(intent)
+        }
+
         try {
             Amplify.addPlugin(AWSApiPlugin())
             Amplify.addPlugin(AWSDataStorePlugin())
@@ -51,21 +54,21 @@ class MainActivity : AppCompatActivity() {
             },
             { Log.e("AuthQuickstart", "Failed to sign in", it) }
         )
-        super.onCreate(savedInstanceState)
+//        super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        setSupportActionBar(binding.toolbar)
-
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+//        binding = ActivityMainBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
+//
+//        setSupportActionBar(binding.toolbar)
+//
+//        val navController = findNavController(R.id.nav_host_fragment_content_main)
+//        appBarConfiguration = AppBarConfiguration(navController.graph)
+//        setupActionBarWithNavController(navController, appBarConfiguration)
+//
+//        binding.fab.setOnClickListener { view ->
+//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show()
+//        }
         val item = Users.builder()
             .usrname("gamer69")
             .passw("123123")
@@ -113,8 +116,8 @@ class MainActivity : AppCompatActivity() {
 //            },
 //            { Log.e("AuthQuickstart", "Failed to confirm sign up", it) }
 //        )
-
     }
+
     private fun uploadFile() {
         val exampleFile = File(applicationContext.filesDir, "ExampleKey")
         exampleFile.writeText("Example file contents")
@@ -127,9 +130,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
-    }
+//    override fun onSupportNavigateUp(): Boolean {
+//        val navController = findNavController(R.id.nav_host_fragment_content_main)
+//        return navController.navigateUp(appBarConfiguration)
+//                || super.onSupportNavigateUp()
+//    }
 }
