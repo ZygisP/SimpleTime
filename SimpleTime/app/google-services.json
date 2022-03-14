@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "505159059204",
+    "project_id": "simpletime-4a151",
+    "storage_bucket": "simpletime-4a151.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505159059204:android:44c2c4d89afea118f63251",
+        "android_client_info": {
+          "package_name": "com.example.simpletime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "505159059204-e14ldc44u1ojpciltiicjvvr9qv2f805.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBn860dob6LubDBLvsJVeLJjAqOtUzAoQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "505159059204-e14ldc44u1ojpciltiicjvvr9qv2f805.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

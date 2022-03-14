@@ -9,7 +9,7 @@
 
     <!--  Logo image view  -->
     <ImageView
-        android:id="@+id/image_logo"
+        android:id="@+id/login_imageLogo"
         android:layout_width="135dp"
         android:layout_height="135dp"
         android:layout_marginTop="76dp"
@@ -21,7 +21,7 @@
 
     <!--  SimpleTime text view  -->
     <TextView
-        android:id="@+id/text_simpletime"
+        android:id="@+id/login_textSimpletime"
         android:layout_width="260dp"
         android:layout_height="51dp"
         android:layout_centerHorizontal="true"
@@ -39,7 +39,7 @@
 
     <!--  Log in button -->
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/login_btnLogin"
         style="@style/log_in"
         android:layout_width="296dp"
         android:layout_height="56dp"
@@ -61,7 +61,7 @@
     <!--  Enter your name text input  -->
 
     <Button
-        android:id="@+id/btn_createAcc"
+        android:id="@+id/login_btnCreateAcc"
         style="@style/log_in"
         android:layout_width="296dp"
         android:layout_height="54dp"
@@ -78,7 +78,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/login_textName"
         android:layout_width="49dp"
         android:layout_height="21dp"
         android:layout_alignParentStart="true"
@@ -94,7 +94,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/login_enterName"
         android:layout_width="295dp"
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
@@ -113,13 +113,12 @@
     <!--  Enter your password text input  -->
 
     <TextView
-        android:id="@+id/password"
+        android:id="@+id/login_textPassword"
         android:layout_width="81dp"
         android:layout_height="21dp"
         android:layout_marginTop="400dp"
         android:gravity="top"
         android:text="@string/password"
-
         android:textAppearance="@style/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.172"
@@ -127,7 +126,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/login_enterPassword"
         android:layout_width="295dp"
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
@@ -147,7 +146,7 @@
     <!--  Forgot username button  -->
 
     <Button
-        android:id="@+id/btn_forgotPass"
+        android:id="@+id/login_btnForgotPassword"
         style="@style/forgot_pass"
         android:layout_width="156dp"
         android:layout_height="48dp"
@@ -164,7 +163,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_forgotUsername"
+        android:id="@+id/login_btnForgotUsername"
         style="@style/forgot_pass"
         android:layout_width="158dp"
         android:layout_height="48dp"
