@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         {
             auth.signInWithEmailAndPassword(email,password).addOnCompleteListener { task ->
                 if(task.isSuccessful){
-                    val intent= Intent(this,LoadingScreenActivity::class.java)
+                    val intent= Intent(this,UserHomeActivity::class.java)
                     startActivity(intent)
                     finish()
                 }

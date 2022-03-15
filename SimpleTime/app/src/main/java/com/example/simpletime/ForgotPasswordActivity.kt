@@ -20,11 +20,17 @@ class ForgotPasswordActivity : AppCompatActivity() {
   {
       resetPassword(it)
   }
+        forgotPass_btnBack.setOnClickListener()
+        {
+            val intent = Intent(this, MainActivity::class.java);
+            startActivity(intent)
+        }
     }
 
     fun resetPassword(view: View) {
         val email = forgotPass_enterEmail.text.toString()
-
+    if (email.isNotEmpty())
+    {
         Firebase.auth.sendPasswordResetEmail(email)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -37,4 +43,9 @@ class ForgotPasswordActivity : AppCompatActivity() {
                     .show()
             }
     }
+        else
+            Toast.makeText(applicationContext, "Please enter your email first",
+                Toast.LENGTH_LONG).show()
+    }
+
 }

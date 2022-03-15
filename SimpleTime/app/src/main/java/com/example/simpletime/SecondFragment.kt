@@ -48,10 +48,9 @@ class SecondFragment : AppCompatActivity() {
                 auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener() { task ->
 
                     if (task.isSuccessful) {
+                        val user = auth.currentUser
+                         user?.updateProfile(userProfileChangeRequest { displayName = name })
                         sendEmailVerification()
-                        userProfileChangeRequest {
-                            displayName = name;
-                        }
 
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
