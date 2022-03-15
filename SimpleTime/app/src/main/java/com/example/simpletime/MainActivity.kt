@@ -37,19 +37,28 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
-    fun login(view: View){
-        val email=login_enterName.text.toString()
-        val password=login_enterPassword.text.toString()
-
-        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener { task ->
-            if(task.isSuccessful){
-                val intent= Intent(this,LoadingScreenActivity::class.java)
-                startActivity(intent)
-                finish()
+    fun login(view: View) {
+        val email = login_enterName.text.toString()
+        val password = login_enterPassword.text.toString()
+        if (email.isNotEmpty() && password.isNotEmpty())
+        {
+            auth.signInWithEmailAndPassword(email,password).addOnCompleteListener { task ->
+                if(task.isSuccessful){
+                    val intent= Intent(this,LoadingScreenActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }.addOnFailureListener { exception ->
+                Toast.makeText(applicationContext,exception.localizedMessage, Toast.LENGTH_LONG).show()
             }
-        }.addOnFailureListener { exception ->
-            Toast.makeText(applicationContext,exception.localizedMessage, Toast.LENGTH_LONG).show()
         }
+        else {
+            Toast.makeText(
+                applicationContext, "Email and password fields cannot be empty",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+
     }
   private fun buildActionCodeSettings() {
         // [START auth_build_action_code_settings]

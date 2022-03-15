@@ -11,6 +11,7 @@ import com.google.firebase.auth.ActionCodeSettings
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.actionCodeSettings
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_second.*
@@ -42,19 +43,32 @@ class SecondFragment : AppCompatActivity() {
         val email = signup_enterEmail.text.toString()
         val name = signup_enterName.text.toString()
         val password = signup_enterPassword.text.toString();
+        if (email.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty())
+            {
+                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener() { task ->
 
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener() { task ->
+                    if (task.isSuccessful) {
+                        sendEmailVerification()
+                        userProfileChangeRequest {
+                            displayName = name;
+                        }
 
-            if (task.isSuccessful) {
-                sendEmailVerification()
-
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                finish()
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+                }.addOnFailureListener { exception ->
+                    Toast.makeText(applicationContext, exception.localizedMessage, Toast.LENGTH_LONG).show()
+                }
             }
-        }.addOnFailureListener { exception ->
-            Toast.makeText(applicationContext, exception.localizedMessage, Toast.LENGTH_LONG).show()
+        else
+        {
+            Toast.makeText(
+                applicationContext, "All fields must be filled out",
+                Toast.LENGTH_LONG
+            ).show()
         }
+
     }
 
     private fun sendEmailVerification() {
