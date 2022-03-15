@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundimage"
+    tools:context=".UserHomeActivity" >
+
+    <Button
+        android:id="@+id/userHome_btnMood"
+        style="@style/log_in"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="164dp"
+        android:background="@drawable/filledbutton"
+        android:elevation="4dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/mood"
+        android:textAppearance="@style/log_in"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/userHome_btnMoodFollowing"
+        style="@style/log_in"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="328dp"
+        android:layout_marginEnd="164dp"
+        android:background="@drawable/filledbutton"
+        android:elevation="4dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/following"
+        android:textAppearance="@style/log_in"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/userHome_btnMoodDailytop"
+        style="@style/log_in"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="432dp"
+        android:layout_marginEnd="164dp"
+        android:background="@drawable/filledbutton"
+        android:elevation="4dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/dailytop"
+        android:textAppearance="@style/log_in"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/userHome_btnWeeklytop"
+        style="@style/log_in"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="536dp"
+        android:layout_marginEnd="164dp"
+        android:background="@drawable/filledbutton"
+        android:elevation="4dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/weeklytop"
+        android:textAppearance="@style/log_in"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/userHome_btnOfficial"
+        style="@style/log_in"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="640dp"
+        android:layout_marginEnd="164dp"
+        android:background="@drawable/filledbutton"
+        android:elevation="4dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/official"
+        android:textAppearance="@style/log_in"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/userHome_sidebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="356dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.817"
+        app:srcCompat="@drawable/strokebuttonvertical" />
+
+    <TextView
+        android:id="@+id/userHome_userGreeting"
+        android:layout_marginTop="124dp"
+        android:layout_width="192dp"
+        android:layout_height="63dp"
+        android:text="@string/usergreet"
+        android:textAppearance="@style/categories"
+        android:gravity="center_horizontal|top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

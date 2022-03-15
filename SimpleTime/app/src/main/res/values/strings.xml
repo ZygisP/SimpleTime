@@ -25,4 +25,11 @@
     <string name="create_account">Create an account</string>
     <string name="email">Email</string>
     <string name="submit">Submit</string>
+    <string name="mood">Mood</string>
+    <string name="following">Following</string>
+    <string name="dailytop">Daily Top</string>
+    <string name="weeklytop">Weekly Top</string>
+    <string name="official">Official</string>
+    <string name="categories">Categories</string>
+    <string name="usergreet"></string>
 </resources>
