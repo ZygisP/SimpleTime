@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundimage"
+    tools:context=".ActivityVideoPage"
+    tools:layout_editor_absoluteX="32dp"
+    tools:layout_editor_absoluteY="0dp">
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="96dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/smallbutton"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/userHome_categories"
+        android:layout_width="192dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="48dp"
+        android:gravity="center_horizontal|top"
+        android:text="Title"
+        android:textAppearance="@style/categories"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="412dp"
+        android:layout_height="217dp"
+        android:layout_marginTop="111dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="45dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="348dp"
+        android:layout_marginEnd="356dp"
+        android:background="@null"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/usericon"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="180dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="348dp"
+        android:layout_marginEnd="169dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/filledbutton" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="97dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="347dp"
+        android:layout_marginEnd="79dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/smallbuttonfilled" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="97dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="347dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/smallbuttonfilled" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="396dp"
+        android:layout_height="205dp"
+        android:layout_marginTop="390dp"
+        android:layout_marginEnd="8dp"
+        android:scaleY="2.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/filledbutton" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="396dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="688dp"
+        android:layout_marginEnd="9dp"
+        android:scaleY="2.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/filledbutton" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="45dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="595dp"
+        android:layout_marginEnd="267dp"
+        android:background="@null"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/star"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="45dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="595dp"
+        android:layout_marginEnd="64dp"
+        android:background="@null"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/star"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="45dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="595dp"
+        android:layout_marginEnd="316dp"
+        android:background="@null"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/reportbutton"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="52dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="676dp"
+        android:layout_marginEnd="324dp"
+        android:background="@null"
+        android:scaleX="1.75"
+        android:scaleY="1.75"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/maskgroup"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton14"
+        android:layout_width="52dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="676dp"
+        android:layout_marginEnd="252dp"
+        android:background="@null"
+        android:scaleX="1.75"
+        android:scaleY="1.75"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sraide"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton15"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="672dp"
+        android:layout_marginEnd="176dp"
+        android:background="@null"
+        android:scaleX="2"
+        android:scaleY="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/messagearrow"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton19"
+        android:layout_width="55dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="676dp"
+        android:layout_marginEnd="111dp"
+        android:background="@null"
+        android:scaleX="1.75"
+        android:scaleY="1.75"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/savebutton"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton18"
+        android:layout_width="52dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="676dp"
+        android:layout_marginEnd="44dp"
+        android:background="@null"
+        android:scaleX="1.75"
+        android:scaleY="1.75"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/donatebutton"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="45dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="595dp"
+        android:layout_marginEnd="115dp"
+        android:background="@null"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/star"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="45dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="595dp"
+        android:layout_marginEnd="166dp"
+        android:background="@null"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/star"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton10"
+        android:layout_width="30dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="347dp"
+        android:layout_marginEnd="130dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/star"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="45dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="595dp"
+        android:layout_marginEnd="216dp"
+        android:background="@null"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/star"
+        tools:ignore="SpeakableTextPresentCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
