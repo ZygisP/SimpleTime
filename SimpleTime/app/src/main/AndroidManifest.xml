@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleTime.NoActionBar">
         <activity
-            android:name=".chatroomActivity"
+            android:name=".ActivityChatroom"
             android:exported="false" />
         <activity
             android:name=".ActivityVideoPage"
@@ -19,13 +19,13 @@
             android:name=".UserHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".LoadingScreenActivity"
+            android:name=".ActivityLoadingScreen"
             android:exported="false" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".ActivityForgotPassword"
             android:exported="false" />
         <activity
-            android:name=".VideoPlayer"
+            android:name=".ActivityVideoPlayer"
             android:exported="false" />
         <activity
             android:name=".SecondFragment"

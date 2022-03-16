@@ -13,11 +13,25 @@
 
     <!--  SimpleTime text view  -->
 
+
+    <!--  Log in button -->
+
+    <ImageView
+        android:id="@+id/signup_imageLogo"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
+
     <TextView
         android:id="@+id/signup_textPassword"
         android:layout_width="81dp"
         android:layout_height="21dp"
-        android:layout_marginTop="484dp"
+        android:layout_marginTop="472dp"
         android:gravity="top"
         android:text="@string/password"
 
@@ -33,53 +47,23 @@
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="508dp"
+        android:layout_marginTop="496dp"
         android:background="@drawable/strokebutton"
         android:hint="@string/hint_password"
-        android:paddingStart="19dp"
         android:inputType="textPassword"
+        android:paddingStart="19dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RtlSymmetry" />
-
-    <ImageView
-        android:id="@+id/signup_imageLogo"
-        android:layout_width="135dp"
-        android:layout_height="135dp"
-        android:layout_marginTop="52dp"
-        android:src="@drawable/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ImageContrastCheck" />
-
-
-    <!--  Log in button -->
-    <TextView
-        android:id="@+id/signup_textSimpletime"
-        android:layout_width="260dp"
-        android:layout_height="51dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="204dp"
-        android:fontFamily="@font/tauri"
-        android:gravity="center_horizontal|top"
-        android:text="@string/simpletime"
-        android:textAppearance="@style/simpletime"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/signup_btnSignup"
         style="@style/log_in"
         android:layout_width="296dp"
         android:layout_height="56dp"
-        android:layout_marginTop="592dp"
+        android:layout_marginTop="580dp"
         android:background="@drawable/filledbutton"
         android:elevation="4dp"
         android:fontFamily="@font/poppins_medium"
@@ -87,7 +71,7 @@
         android:textAppearance="@style/log_in"
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -96,7 +80,7 @@
         style="@style/log_in"
         android:layout_width="96dp"
         android:layout_height="48dp"
-        android:layout_marginTop="680dp"
+        android:layout_marginTop="668dp"
         android:background="@drawable/smallbutton"
         android:elevation="4dp"
         android:fontFamily="@font/poppins_medium"
@@ -114,7 +98,7 @@
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="324dp"
+        android:layout_marginTop="312dp"
         android:background="@drawable/strokebutton"
         android:hint="@string/hint_email"
         android:paddingStart="19dp"
@@ -129,7 +113,7 @@
         android:layout_height="21dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="284dp"
         android:fontFamily="@font/roboto"
         android:gravity="top"
         android:text="@string/email"
@@ -145,7 +129,7 @@
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="416dp"
+        android:layout_marginTop="404dp"
         android:background="@drawable/strokebutton"
         android:hint="@string/hint_name"
         android:paddingStart="19dp"
@@ -158,7 +142,7 @@
         android:id="@+id/signup_textName"
         android:layout_width="81dp"
         android:layout_height="21dp"
-        android:layout_marginTop="392dp"
+        android:layout_marginTop="380dp"
         android:gravity="top"
         android:text="@string/name"
         android:textAppearance="@style/name"
@@ -166,6 +150,23 @@
         app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/signup_textSimpletime"
+        android:layout_width="260dp"
+        android:layout_height="51dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="192dp"
+        android:fontFamily="@font/tauri"
+        android:gravity="center_horizontal|top"
+        android:text="@string/simpletime"
+        android:textAppearance="@style/simpletime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.actionCodeSettings
-import kotlinx.android.synthetic.main.fragment_first.*
+import kotlinx.android.synthetic.main.activity_login.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
 
         login_btnCreateAcc.setOnClickListener{
-            val intent = Intent(this, SecondFragment::class.java);
+            val intent = Intent(this, ActivityRegistration::class.java);
             startActivity(intent)
         }
 
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
          login(it)
         }
         login_btnForgotPassword.setOnClickListener{
-            val intent = Intent(this, ForgotPasswordActivity::class.java);
+            val intent = Intent(this, ActivityForgotPassword::class.java);
             startActivity(intent)
 
         }
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         {
             auth.signInWithEmailAndPassword(email,password).addOnCompleteListener { task ->
                 if(task.isSuccessful){
-                    val intent= Intent(this,UserHomeActivity::class.java)
+                    val intent= Intent(this,ActivityUserHome::class.java)
                     startActivity(intent)
                     finish()
                 }

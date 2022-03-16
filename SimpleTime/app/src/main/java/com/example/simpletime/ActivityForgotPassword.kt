@@ -10,9 +10,9 @@ import android.widget.Toast
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_forgot_password.*
-import kotlinx.android.synthetic.main.fragment_first.*
+import kotlinx.android.synthetic.main.activity_login.*
 
-class ForgotPasswordActivity : AppCompatActivity() {
+class ActivityForgotPassword : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_password)

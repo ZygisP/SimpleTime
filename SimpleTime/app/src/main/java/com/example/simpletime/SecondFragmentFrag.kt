@@ -6,14 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.simpletime.databinding.FragmentSecondBinding
+import com.example.simpletime.databinding.ActivityRegistrationBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 class SecondFragmentFrag : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: ActivityRegistrationBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,7 +24,7 @@ class SecondFragmentFrag : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = ActivityRegistrationBinding.inflate(inflater, container, false)
         return binding.root
 
     }
