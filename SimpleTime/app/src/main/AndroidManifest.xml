@@ -16,7 +16,7 @@
             android:name=".ActivityVideoPage"
             android:exported="false" />
         <activity
-            android:name=".UserHomeActivity"
+            android:name=".ActivityUserHome"
             android:exported="false" />
         <activity
             android:name=".ActivityLoadingScreen"
@@ -28,7 +28,7 @@
             android:name=".ActivityVideoPlayer"
             android:exported="false" />
         <activity
-            android:name=".SecondFragment"
+            android:name=".ActivityRegistration"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
