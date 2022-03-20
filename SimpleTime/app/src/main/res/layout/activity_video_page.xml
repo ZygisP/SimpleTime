@@ -109,7 +109,7 @@
         app:srcCompat="@drawable/filledbutton" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/PopUp1"
         android:layout_width="45dp"
         android:layout_height="49dp"
         android:layout_marginTop="595dp"
@@ -123,7 +123,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/imageButton9"
+        android:id="@+id/PopUp5"
         android:layout_width="45dp"
         android:layout_height="49dp"
         android:layout_marginTop="595dp"
@@ -137,7 +137,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/ReportButton"
         android:layout_width="45dp"
         android:layout_height="49dp"
         android:layout_marginTop="595dp"
@@ -221,7 +221,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/PopUp4"
         android:layout_width="45dp"
         android:layout_height="49dp"
         android:layout_marginTop="595dp"
@@ -235,7 +235,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/PopUp3"
         android:layout_width="45dp"
         android:layout_height="49dp"
         android:layout_marginTop="595dp"
@@ -249,7 +249,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/imageButton10"
+        android:id="@+id/Rating"
         android:layout_width="30dp"
         android:layout_height="36dp"
         android:layout_marginTop="347dp"
@@ -261,7 +261,7 @@
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/PopUp2"
         android:layout_width="45dp"
         android:layout_height="49dp"
         android:layout_marginTop="595dp"

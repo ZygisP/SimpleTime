@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundimage"
+    tools:context=".ActivityReport">
+
+    <TextView
+        android:id="@+id/report_textName"
+        android:layout_width="60dp"
+        android:layout_height="23dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="44dp"
+        android:layout_marginBottom="664dp"
+        android:fontFamily="@font/roboto"
+        android:gravity="top"
+        android:text="@string/Report"
+        android:textAppearance="@style/name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/MenuButtonReport"
+        android:layout_width="96dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="299dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="660dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/smallbutton"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="398dp"
+        android:layout_height="318dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="193dp"
+        android:scaleY="7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/filledbutton" />
+
+    <Button
+        android:id="@+id/login_btnLogin"
+        style="@style/log_in"
+        android:layout_width="150dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="644dp"
+        android:layout_marginBottom="31dp"
+        android:background="@drawable/filledbutton"
+        android:elevation="4dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/submit"
+        android:textAppearance="@style/log_in"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="298dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="138dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="560dp"
+        android:text="Harmful or dangerous content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="298dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="205dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="493dp"
+        android:text="Violent or repulsive content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="298dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="406dp"
+        android:layout_marginBottom="292dp"
+        android:text="Hateful or abusive content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/checkBox6"
+        android:layout_width="298dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="339dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="359dp"
+        android:text="Spam or misleading"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/checkBox7"
+        android:layout_width="298dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="272dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="426dp"
+        android:text="Sexual content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/checkBox5"
+        android:layout_width="298dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="158dp"
+        android:text="Other"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="298dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="473dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="225dp"
+        android:text="Infringes my rights"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
