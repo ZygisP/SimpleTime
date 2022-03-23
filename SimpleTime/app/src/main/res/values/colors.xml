@@ -15,4 +15,5 @@
     <color name="purple_hint">#8725173A</color>
     <color name="shadow_black">#80000000</color>
     <color name="dark_purple">#301934</color>
+    <color name="transparent_purple">#8025173A</color>
 </resources>

@@ -36,5 +36,13 @@ class ActivityVideoPage : AppCompatActivity() {
             val intent = Intent(this, ActivityRatePopup::class.java);
             startActivity(intent)
         }
+        imageButton18.setOnClickListener{
+            val intent = Intent(this, ActivityDonation::class.java);
+            startActivity(intent)
+        }
+        imageButton19.setOnClickListener{
+            val intent = Intent(this, ActivitySaveVideo::class.java);
+            startActivity(intent)
+        }
     }
 }

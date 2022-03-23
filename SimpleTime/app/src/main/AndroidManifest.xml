@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleTime.NoActionBar">
         <activity
+            android:name=".ActivitySaveVideo"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityDonation"
+            android:exported="false" />
+        <activity
             android:name=".ActivityRatePopup"
             android:exported="false" />
         <activity
