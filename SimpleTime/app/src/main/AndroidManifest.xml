@@ -20,6 +20,7 @@
             android:exported="false" />
         <activity
             android:name=".ActivityRatePopup"
+            android:theme="@style/Theme.SimpleTime.RatePopup"
             android:exported="false" />
         <activity
             android:name=".ActivityReport"
