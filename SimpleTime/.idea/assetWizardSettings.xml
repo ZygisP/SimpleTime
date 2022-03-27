@@ -37,8 +37,8 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\Margar\Desktop\assets\New folder\Component 71 (1).png" />
-                                                <entry key="opacityPercent" value="60" />
+                                                <entry key="imagePath" value="C:\Users\Margar\Desktop\New folder\Star 12.png" />
+                                                <entry key="opacityPercent" value="80" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -71,8 +71,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\Margar\Desktop\assets\New folder\Component 71 (1).png" />
-                                      <entry key="outputName" value="userIcon" />
+                                      <entry key="imageAsset" value="C:\Users\Margar\Desktop\New folder\Star 12.png" />
+                                      <entry key="outputName" value="star2" />
+                                      <entry key="theme" value="CUSTOM" />
+                                      <entry key="themeColor" value="00175a" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -127,11 +129,6 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
-                                    </map>
-                                  </option>
-                                  <option name="values">
-                                    <map>
-                                      <entry key="foregroundLayerName" value="userIcon" />
                                     </map>
                                   </option>
                                 </PersistentState>
