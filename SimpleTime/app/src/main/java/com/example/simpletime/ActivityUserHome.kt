@@ -19,5 +19,9 @@ class ActivityUserHome : AppCompatActivity() {
             val intent = Intent(this, ActivityVideoPage::class.java);
             startActivity(intent)
         }
+        userHome_btnMoodDailytop.setOnClickListener{
+            val intent = Intent(this, ActivityUserProfile::class.java);
+            startActivity(intent)
+        }
     }
 }
