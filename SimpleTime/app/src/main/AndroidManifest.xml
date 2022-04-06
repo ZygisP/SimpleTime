@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleTime.NoActionBar">
         <activity
+            android:name=".ActivityComments"
+            android:exported="false" />
+        <activity
             android:name=".CreatorsProfile2"
             android:exported="false" />
         <activity

@@ -21,6 +21,10 @@ class ActivityVideoPage : AppCompatActivity() {
             val intent = Intent(this, ActivityReport::class.java);
             startActivity(intent)
         }
+        imageButton11.setOnClickListener {
+            val intent = Intent(this, ActivityComments::class.java);
+            startActivity(intent)
+        }
         PopUp1.setOnClickListener {
             PopUp1.setImageResource(R.drawable.star)
             PopUp2.setImageResource(R.drawable.star2)
