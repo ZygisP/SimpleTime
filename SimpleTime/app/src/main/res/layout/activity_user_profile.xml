@@ -7,7 +7,19 @@
     android:background="@drawable/backgroundimage"
     tools:context=".ActivityUserProfile"
     tools:layout_editor_absoluteX="0dp"
-    tools:layout_editor_absoluteY="10dp">
+    tools:layout_editor_absoluteY="-108dp"><![CDATA[
+
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundimage"
+        tools:context=".ActivityUserProfile"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="220dp">
+
+
+
+    ]]>
 
     <Button
         android:id="@+id/userProfile_btnSave"
@@ -17,6 +29,7 @@
         android:background="@drawable/smallbutton"
         android:elevation="4dp"
         android:fontFamily="@font/poppins_medium"
+        android:onClick="update_profile"
         android:text="@string/save"
         android:textAppearance="@style/back"
         app:backgroundTint="@null"
@@ -38,10 +51,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.321" />
+        app:layout_constraintVertical_bias="0.254" />
 
     <Button
         android:id="@+id/userProfile_btnBack"
@@ -62,44 +75,19 @@
         app:layout_constraintVertical_bias="0.948" />
 
     <EditText
-        android:id="@+id/userProfile_editUsername"
+        android:id="@+id/userProfile_editName"
         android:layout_width="295dp"
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="348dp"
+        android:layout_marginTop="284dp"
         android:background="@drawable/strokebutton"
-        android:hint="@string/hint_name"
         android:paddingStart="19dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.301"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RtlSymmetry" />
-
-    <ImageView
-        android:id="@+id/userProfile_usernamePicture"
-        android:layout_width="45dp"
-        android:layout_height="44dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.433"
-        app:srcCompat="@drawable/star" />
-
-    <TextView
-        android:id="@+id/userProfile_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Username"
-        android:textAppearance="@style/categories"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.284"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.426" />
 
     <EditText
         android:id="@+id/userProfile_editEmail"
@@ -107,38 +95,63 @@
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="492dp"
+        android:layout_marginTop="396dp"
         android:background="@drawable/strokebutton"
-        android:hint="@string/hint_email"
         android:paddingStart="19dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.301"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RtlSymmetry" />
 
     <TextView
-        android:id="@+id/userProfile_email"
+        android:id="@+id/userProfile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textAppearance="@style/categories"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.216"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.344" />
+
+    <TextView
+        android:id="@+id/userProfile_name3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
         android:textAppearance="@style/categories"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.244"
+        app:layout_constraintHorizontal_bias="0.215"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintVertical_bias="0.505" />
 
     <ImageView
-        android:id="@+id/userProfile_emailPicture"
-        android:layout_width="45dp"
-        android:layout_height="44dp"
+        android:id="@+id/userProfile_usernamePicture"
+        android:layout_width="33dp"
+        android:layout_height="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.647"
+        app:layout_constraintVertical_bias="0.344"
+        app:srcCompat="@drawable/star" />
+
+    <ImageView
+        android:id="@+id/userProfile_usernamePicture4"
+        android:layout_width="33dp"
+        android:layout_height="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.505"
         app:srcCompat="@drawable/star" />
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -150,9 +163,11 @@
         app:civ_border_width="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115"
+        app:layout_constraintVertical_bias="0.048"
         tools:srcCompat="@tools:sample/avatars" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

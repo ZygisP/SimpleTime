@@ -54,6 +54,7 @@
         <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/fragment_first2.xml" value="0.3179347826086957" />
         <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/fragment_second.xml" value="0.2672239108409321" />
         <entry key="..\:/Users/PC/Documents/SimpleTime_ANTRAS/SimpleTime/app/src/main/res/layout/fragment_second2.xml" value="0.3179347826086957" />
+<<<<<<< HEAD
         <entry key="..\:/Users/Ugnius/Documents/GitHub/SimpleTime/SimpleTime/app/src/main/res/drawable-v24/filledbutton.xml" value="0.44" />
         <entry key="..\:/Users/Ugnius/Documents/GitHub/SimpleTime/SimpleTime/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.44" />
         <entry key="..\:/Users/Ugnius/Documents/GitHub/SimpleTime/SimpleTime/app/src/main/res/drawable-v24/strokebutton.xml" value="0.44" />
@@ -80,6 +81,9 @@
         <entry key="..\:/Users/Ugnius/Documents/GitHub/SimpleTime/SimpleTime/app/src/main/res/layout/activity_user_profile.xml" value="0.4420692603676785" />
         <entry key="..\:/Users/Ugnius/Documents/GitHub/SimpleTime/SimpleTime/app/src/main/res/layout/activity_video_page.xml" value="0.2160468031759298" />
         <entry key="..\:/Users/Ugnius/Documents/GitHub/SimpleTime/SimpleTime/app/src/main/res/layout/activity_video_player.xml" value="0.4420692603676785" />
+=======
+        <entry key="..\:/Users/PC/Documents/SimpleTime_NAUJAS/SimpleTime/app/src/main/res/layout/activity_user_profile.xml" value="0.46743095362167797" />
+>>>>>>> d372fb1531364bc162f0c5693ba2d04d65f41bcb
       </map>
     </option>
   </component>
