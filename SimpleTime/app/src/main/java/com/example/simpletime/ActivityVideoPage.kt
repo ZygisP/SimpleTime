@@ -69,6 +69,10 @@ class ActivityVideoPage : AppCompatActivity() {
             }
             popup.show()
     }
+        imageButton2.setOnClickListener{
+            val intent = Intent(this, CreatorsProfile1::class.java);
+            startActivity(intent)
+        }
 
     }
 }
