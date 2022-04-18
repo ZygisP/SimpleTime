@@ -2,16 +2,19 @@ package com.example.simpletime
 
 import android.content.ContentValues.TAG
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.tasks.OnFailureListener
+import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_registration.*
 
 
@@ -24,6 +27,7 @@ class ActivityRegistration : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
+        val db = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
 
         signup_btnBack.setOnClickListener {
@@ -39,20 +43,37 @@ class ActivityRegistration : AppCompatActivity() {
 
     fun register(view: View) {
         val email = signup_enterEmail.text.toString()
-        val name = signup_enterName.text.toString()
+        val nickname = signup_enterName.text.toString()
         val password = signup_enterPassword.text.toString();
-        if (email.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty())
+        if (email.isNotEmpty() && password.isNotEmpty() && nickname.isNotEmpty())
             {
+
+
                 auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener() { task ->
 
                     if (task.isSuccessful) {
-                        val user = auth.currentUser
-                         user?.updateProfile(userProfileChangeRequest { displayName = name })
+
+                        val db = FirebaseFirestore.getInstance()
+                        val authUser = auth.currentUser
+
+                        authUser?.updateProfile(userProfileChangeRequest { displayName = nickname })
                         sendEmailVerification()
 
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         finish()
+
+                        val user: MutableMap<String, Any> = HashMap()
+                        user["nickname"] = nickname
+                        user["name"] = ""
+                        user["surname"] = ""
+                        user["age"] = 0
+                        user["email"] = email
+                        user["password"] = password
+                        user["gender"] = false  // true = male  false = female
+
+                        // Add a new document with an auth generated ID
+                        db.collection("users").document(authUser?.uid.toString()).set(user)
                     }
                 }.addOnFailureListener { exception ->
                     Toast.makeText(applicationContext, exception.localizedMessage, Toast.LENGTH_LONG).show()
