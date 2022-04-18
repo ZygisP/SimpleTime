@@ -34,4 +34,6 @@
     <string name="categories">Categories</string>
     <string name="usergreet"></string>
     <string name="Report">Report</string>
+    <string name="media_url_mp4">https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4</string>
+    <string name="myTestMp4">"https://download.blender.org/demo/movies/BBB/bbb_sunflower_1080p_30fps_normal.mp4"</string>
 </resources>
