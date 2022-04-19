@@ -53,6 +53,9 @@
             android:name=".ActivityForgotPassword"
             android:exported="false" />
         <activity
+        android:name=".uploadVideo"
+        android:exported="false" />
+        <activity
             android:name=".ActivityVideoPlayer"
             android:exported="false" />
         <activity

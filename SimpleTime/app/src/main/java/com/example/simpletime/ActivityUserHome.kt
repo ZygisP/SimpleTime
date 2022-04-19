@@ -28,9 +28,15 @@ class ActivityUserHome : AppCompatActivity() {
             val intent = Intent(this, VideoPlayerActivity::class.java)
             startActivity(intent)
         }
+<<<<<<< Updated upstream
         userHome_btnOfficial.setOnClickListener {
 
 
+=======
+        userHome_btnMoodDailytop.setOnClickListener{
+            val intent = Intent(this, uploadVideo::class.java)
+            startActivity(intent)
+>>>>>>> Stashed changes
         }
     }
 }
