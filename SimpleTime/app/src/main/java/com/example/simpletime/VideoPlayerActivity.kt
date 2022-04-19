@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.simpletime.R
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.MediaMetadata
@@ -23,7 +22,7 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_video_player)
         progressBar = findViewById(R.id.progressBar)
 
         titleTv = findViewById(R.id.title)
@@ -32,7 +31,7 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
         addMP4Files()
 
 
-        // restore playstate on Rotation
+        // restore player state on Rotation
         if (savedInstanceState != null) {
             if (savedInstanceState.getInt("mediaItem") != 0) {
                 val restoredMediaItem = savedInstanceState.getInt("mediaItem")
@@ -82,6 +81,12 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
             }
             Player.STATE_READY -> {
                 progressBar.visibility = View.INVISIBLE
+            }
+            Player.STATE_ENDED -> {
+
+            }
+            Player.STATE_IDLE -> {
+
             }
         }
     }
