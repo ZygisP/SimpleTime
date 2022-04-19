@@ -34,7 +34,7 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
 
         titleTv = findViewById(R.id.title)
 
-        getUrlAsync("1650382289065")
+        getUrlAsync("1650383898885")
 
         //setupPlayer()
         //addMP4Files()
@@ -100,7 +100,7 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
 
     override fun onResume() {
         super.onResume()
-        getUrlAsync("1650382289065")
+        getUrlAsync("1650383898885")
     }
 
     // handle loading
