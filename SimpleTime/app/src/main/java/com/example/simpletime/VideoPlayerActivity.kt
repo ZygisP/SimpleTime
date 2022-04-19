@@ -34,8 +34,10 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
 
         titleTv = findViewById(R.id.title)
 
-        setupPlayer()
-        addMP4Files()
+        getUrlAsync("1650382289065")
+
+        //setupPlayer()
+        //addMP4Files()
 
 
         // restore player state on Rotation
@@ -49,8 +51,8 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
         }
     }
 
-    private fun addMP4Files() {
-        var getLink = getUrlAsync("1648680641579")
+    private fun addMP4Files(getLink: String) {
+        //var getLink = getUrlAsync("1650382289065")
         val mediaItem = MediaItem.fromUri(Uri.parse(getLink))
         val newItems: List<MediaItem> = ImmutableList.of(
             mediaItem
@@ -69,10 +71,12 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
     private fun getUrlAsync(name: String): String {
         var tempLink = "link"
         var storageRef = FirebaseStorage.getInstance().getReference()
-        var nameRef = storageRef.child("Videos/" + name + ".mp4")
+        var nameRef = storageRef.child("Videos").child("eDKfaQu2mhQt40MR06uTDmtgSBm2/" + name + ".mp4")
         nameRef.downloadUrl.addOnSuccessListener {
             Log.d(TAG, it.toString())
             tempLink = it.toString()
+            setupPlayer()
+            addMP4Files(tempLink)
         }.addOnFailureListener {
             Log.d(TAG, "file with this name does not exist")
         }
@@ -96,8 +100,7 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
 
     override fun onResume() {
         super.onResume()
-        setupPlayer()
-        addMP4Files()
+        getUrlAsync("1650382289065")
     }
 
     // handle loading
