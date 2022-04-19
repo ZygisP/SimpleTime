@@ -23,5 +23,9 @@ class ActivityUserHome : AppCompatActivity() {
             val intent = Intent(this, ActivityUserProfile::class.java);
             startActivity(intent)
         }
+        userHome_btnMoodFollowing.setOnClickListener {
+            val intent = Intent(this, VideoPlayerActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
