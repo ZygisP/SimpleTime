@@ -1,5 +1,6 @@
 package com.example.simpletime
 
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,6 +13,8 @@ import com.google.android.exoplayer2.MediaMetadata
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.ui.PlayerView
 import com.google.common.collect.ImmutableList
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 
 class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
@@ -21,6 +24,10 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
     private lateinit var titleTv: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        // var testLink = getRefLink("1648680641579")
+        // Log.d(TAG, testLink)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video_player)
         progressBar = findViewById(R.id.progressBar)
@@ -43,15 +50,36 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
     }
 
     private fun addMP4Files() {
-        val mediaItem = MediaItem.fromUri(getString(R.string.media_url_mp4))
-        val mediaItem2 = MediaItem.fromUri(getString(R.string.myTestMp4))
+        var getLink = getUrlAsync("1648680641579")
+        val mediaItem = MediaItem.fromUri(Uri.parse(getLink))
         val newItems: List<MediaItem> = ImmutableList.of(
-            mediaItem,
-            mediaItem2
+            mediaItem
         )
         player.addMediaItems(newItems)
         player.prepare()
+
     }
+
+    private fun getRefLink(name: String): String {
+        var storageRef = FirebaseStorage.getInstance().getReference()
+        var nameRef = storageRef.child("Videos/" + name + ".mp4")
+        return nameRef.toString()
+    }
+
+    private fun getUrlAsync(name: String): String {
+        var tempLink = "link"
+        var storageRef = FirebaseStorage.getInstance().getReference()
+        var nameRef = storageRef.child("Videos/" + name + ".mp4")
+        nameRef.downloadUrl.addOnSuccessListener {
+            Log.d(TAG, it.toString())
+            tempLink = it.toString()
+        }.addOnFailureListener {
+            Log.d(TAG, "file with this name does not exist")
+        }
+
+        return tempLink
+    }
+
 
     private fun setupPlayer() {
         player = ExoPlayer.Builder(this).build()

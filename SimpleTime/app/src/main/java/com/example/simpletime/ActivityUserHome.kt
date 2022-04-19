@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_user_home.*
 import kotlinx.android.synthetic.main.activity_login.*
@@ -26,6 +27,10 @@ class ActivityUserHome : AppCompatActivity() {
         userHome_btnMoodFollowing.setOnClickListener {
             val intent = Intent(this, VideoPlayerActivity::class.java)
             startActivity(intent)
+        }
+        userHome_btnOfficial.setOnClickListener {
+
+
         }
     }
 }
