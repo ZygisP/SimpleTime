@@ -3,12 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SimpleTime.iml" filepath="$PROJECT_DIR$/.idea/modules/SimpleTime.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SimpleTime.SimpleTime.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SimpleTime.SimpleTime.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SimpleTime.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SimpleTime.app.iml" />
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SimpleTime_NAUJAS.SimpleTime.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SimpleTime_NAUJAS.SimpleTime.app.iml" />
-=======
->>>>>>> da1c0ac2869ec412f84596983473e4ce7619a15e
     </modules>
   </component>
 </project>
