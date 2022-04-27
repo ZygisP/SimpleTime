@@ -119,7 +119,7 @@
         android:scaleY="1.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/star"
+        app:srcCompat="@drawable/star2"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -133,7 +133,7 @@
         android:scaleY="1.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/star"
+        app:srcCompat="@drawable/star2"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -231,7 +231,7 @@
         android:scaleY="1.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/star"
+        app:srcCompat="@drawable/star2"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -245,7 +245,7 @@
         android:scaleY="1.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/star"
+        app:srcCompat="@drawable/star2"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -271,7 +271,7 @@
         android:scaleY="1.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/star"
+        app:srcCompat="@drawable/star2"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
