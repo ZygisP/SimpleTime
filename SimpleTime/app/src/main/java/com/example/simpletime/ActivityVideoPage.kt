@@ -3,6 +3,7 @@ package com.example.simpletime
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.os.SystemClock
 import android.util.Log
 import android.widget.ImageView
 import android.widget.PopupMenu
@@ -13,6 +14,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_video_page.*
+import java.util.concurrent.TimeUnit
 
 
 var db = FirebaseFirestore.getInstance()
@@ -27,7 +29,7 @@ class ActivityVideoPage : AppCompatActivity() {
             .addOnSuccessListener { document ->
                 if (document != null) {
                     Log.d(TAG, "DocumentSnapshot data: ${document.data}")
-                    docRef.update("views", "views".toDouble()+1)
+                    docRef.update("views", document.getLong("views")?.plus(1))
                     videopage_title.setText(document.getString("title"))
                     videoDesc.setText(document.getString("desc"))
                     viewsVideo.setText(document.get("views").toString())
@@ -72,10 +74,20 @@ class ActivityVideoPage : AppCompatActivity() {
                 .addOnSuccessListener { document ->
                     if (document != null) {
                         val currentRating = document.getDouble("rating")
-                        docRef.update("rating", "rating".toDouble()+1)
-                        docRef.update("timesRated", "timesRated".toDouble()+1)
+                        docRef.update("rating", document.getDouble("rating")?.plus(1))
+                        docRef.update("timesRated", document.getDouble("timesRated")?.plus(1))
                     }
                     }
+            PopUp1.setImageDrawable(null)
+            PopUp2.setImageDrawable(null)
+            PopUp3.setImageDrawable(null)
+            PopUp4.setImageDrawable(null)
+            PopUp5.setImageDrawable(null)
+            ReportButton.x = 600F
+            PopUp3.x = 0F
+            PopUp2.x = 0F
+            imageView10.scaleY = 3.5F
+            imageView10.y = 1500F
         }
         PopUp2.setOnClickListener {
             PopUp1.setImageResource(R.drawable.star)
@@ -88,10 +100,20 @@ class ActivityVideoPage : AppCompatActivity() {
                 .addOnSuccessListener { document ->
                     if (document != null) {
                         val currentRating = document.getDouble("rating")
-                        docRef.update("rating", "rating".toDouble()+2)
-                        docRef.update("timesRated", "timesRated".toDouble()+1)
+                        docRef.update("rating", document.getDouble("rating")?.plus(2))
+                        docRef.update("timesRated", document.getDouble("timesRated")?.plus(1))
                     }
                 }
+            PopUp1.setImageDrawable(null)
+            PopUp2.setImageDrawable(null)
+            PopUp3.setImageDrawable(null)
+            PopUp4.setImageDrawable(null)
+            PopUp5.setImageDrawable(null)
+            ReportButton.x = 600F
+            PopUp3.x = 0F
+            PopUp2.x = 0F
+            imageView10.scaleY = 3.5F
+            imageView10.y = 1500F
         }
         PopUp3.setOnClickListener {
             PopUp1.setImageResource(R.drawable.star)
@@ -104,10 +126,20 @@ class ActivityVideoPage : AppCompatActivity() {
                 .addOnSuccessListener { document ->
                     if (document != null) {
                         val currentRating = document.getDouble("rating")
-                        docRef.update("rating", "rating".toDouble()+3)
-                        docRef.update("timesRated", "timesRated".toDouble()+1)
+                        docRef.update("rating", document.getDouble("rating")?.plus(3))
+                        docRef.update("timesRated", document.getDouble("timesRated")?.plus(1))
                     }
                 }
+            PopUp1.setImageDrawable(null)
+            PopUp2.setImageDrawable(null)
+            PopUp3.setImageDrawable(null)
+            PopUp4.setImageDrawable(null)
+            PopUp5.setImageDrawable(null)
+            ReportButton.x = 600F
+            PopUp3.x = 0F
+            PopUp2.x = 0F
+            imageView10.scaleY = 3.5F
+            imageView10.y = 1500F
         }
         PopUp4.setOnClickListener {
             PopUp1.setImageResource(R.drawable.star)
@@ -120,10 +152,20 @@ class ActivityVideoPage : AppCompatActivity() {
                 .addOnSuccessListener { document ->
                     if (document != null) {
                         val currentRating = document.getDouble("rating")
-                        docRef.update("rating", "rating".toDouble()+4)
-                        docRef.update("timesRated", "timesRated".toDouble()+1)
+                        docRef.update("rating", document.getDouble("rating")?.plus(4))
+                        docRef.update("timesRated", document.getDouble("timesRated")?.plus(1))
                     }
                 }
+            PopUp1.setImageDrawable(null)
+            PopUp2.setImageDrawable(null)
+            PopUp3.setImageDrawable(null)
+            PopUp4.setImageDrawable(null)
+            PopUp5.setImageDrawable(null)
+            ReportButton.x = 600F
+            PopUp3.x = 0F
+            PopUp2.x = 0F
+            imageView10.scaleY = 3.5F
+            imageView10.y = 1500F
         }
         PopUp5.setOnClickListener {
             PopUp1.setImageResource(R.drawable.star)
@@ -136,10 +178,20 @@ class ActivityVideoPage : AppCompatActivity() {
                 .addOnSuccessListener { document ->
                     if (document != null) {
                         val currentRating = document.getDouble("rating")
-                        docRef.update("rating", "rating".toDouble()+5)
-                        docRef.update("timesRated", "timesRated".toDouble()+1)
+                        docRef.update("rating", document.getDouble("rating")?.plus(5))
+                        docRef.update("timesRated", document.getDouble("timesRated")?.plus(1))
                     }
                 }
+            PopUp1.setImageDrawable(null)
+            PopUp2.setImageDrawable(null)
+            PopUp3.setImageDrawable(null)
+            PopUp4.setImageDrawable(null)
+            PopUp5.setImageDrawable(null)
+            ReportButton.x = 600F
+            PopUp3.x = 0F
+            PopUp2.x = 0F
+            imageView10.scaleY = 3.5F
+            imageView10.y = 1500F
         }
         imageButton18.setOnClickListener{
             val intent = Intent(this, ActivityDonation::class.java);
