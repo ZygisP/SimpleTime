@@ -57,7 +57,7 @@
         app:srcCompat="@drawable/filledbutton" />
 
     <Button
-        android:id="@+id/login_btnLogin"
+        android:id="@+id/submitReportButton"
         style="@style/log_in"
         android:layout_width="150dp"
         android:layout_height="56dp"
