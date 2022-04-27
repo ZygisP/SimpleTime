@@ -22,7 +22,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/userHome_categories"
+        android:id="@+id/videopage_title"
         android:layout_width="192dp"
         android:layout_height="63dp"
         android:layout_marginTop="48dp"
@@ -43,8 +43,8 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/uploaderPicture"
         android:layout_width="45dp"
         android:layout_height="35dp"
         android:layout_marginTop="348dp"
@@ -54,7 +54,7 @@
         android:scaleY="1.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/usericon"
+        android:src="@drawable/usericon"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
@@ -90,7 +90,7 @@
         android:id="@+id/imageView10"
         android:layout_width="396dp"
         android:layout_height="205dp"
-        android:layout_marginTop="390dp"
+        android:layout_marginTop="388dp"
         android:layout_marginEnd="8dp"
         android:scaleY="2.5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -273,4 +273,61 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/star"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/uploader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginEnd="59dp"
+        android:text="uploader"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/ratingNumb"
+        android:layout_width="32dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="7dp"
+        android:text="ratingNumb"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintStart_toStartOf="@+id/Rating"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/viewsVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="9dp"
+        android:text="viewsNumb"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+    <TextView
+        android:id="@+id/videoDesc"
+        android:layout_width="315dp"
+        android:layout_height="173dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="15dp"
+        android:text="videoDesc"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="@+id/imageView10"
+        app:layout_constraintStart_toStartOf="@+id/imageView10"
+        app:layout_constraintTop_toTopOf="@+id/imageView10" />
 </androidx.constraintlayout.widget.ConstraintLayout>
