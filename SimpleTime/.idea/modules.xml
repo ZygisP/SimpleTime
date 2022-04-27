@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SimpleTime.iml" filepath="$PROJECT_DIR$/.idea/modules/SimpleTime.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SimpleTime.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SimpleTime.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SimpleTime2.SimpleTime.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SimpleTime2.SimpleTime.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SimpleTime_NAUJAS.SimpleTime.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SimpleTime_NAUJAS.SimpleTime.app.iml" />
     </modules>
   </component>
 </project>

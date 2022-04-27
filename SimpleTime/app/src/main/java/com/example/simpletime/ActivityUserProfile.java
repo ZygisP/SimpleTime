@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.nfc.Tag;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -29,12 +30,20 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.google.firestore.v1.WriteResult;
 import com.squareup.picasso.Picasso;
 
+import java.lang.reflect.Array;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class ActivityUserProfile extends AppCompatActivity {
@@ -45,10 +54,13 @@ public class ActivityUserProfile extends AppCompatActivity {
     private FirebaseStorage storage;
     private StorageReference storageReference;
     private FirebaseAuth fAuth;
-    EditText profileName, profileEmail;
+    private FirebaseFirestore firebaseFirestore;
+    EditText profileUsername, profileName, profileSurname, profileEmail, profileAge, profileGender;
     Button btnBack;
+    String firestoreUsername, firestoreName, firestoreSurname, uid, firestoreEmail;
 
-
+    Boolean firestoreGender;
+    Long firestoreAge;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
@@ -56,21 +68,24 @@ public class ActivityUserProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
         profileImage = findViewById(R.id.userProfile_profilePicture);
-        profileName = findViewById(R.id.userProfile_editName);
+        profileUsername = findViewById(R.id.userProfile_editUsername);
         profileEmail = findViewById(R.id.userProfile_editEmail);
+        profileAge = findViewById(R.id.userProfile_editAge);
+        profileName = findViewById(R.id.userProfile_editName);
+        profileSurname = findViewById(R.id.userProfile_editSurname);
+        profileGender = findViewById(R.id.userProfile_editGender);
         btnBack = findViewById(R.id.userProfile_btnBack);
-
+        firebaseFirestore = FirebaseFirestore.getInstance();
         fAuth = FirebaseAuth.getInstance();
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
+        uid = fAuth.getCurrentUser().getUid();
+
+        getFirestoreVariables();
 
 
-        if (user != null) {
-            String name = user.getDisplayName();
-            String email = user.getEmail();
-        }
 
-        loadImagePlaceholder();
+//        loadImagePlaceholder();
         StorageReference profileRef = storageReference.child("users/" + fAuth.getCurrentUser().getUid() + "/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
@@ -93,13 +108,27 @@ public class ActivityUserProfile extends AppCompatActivity {
             }
         });
 
-        showAllUserData();
+//        showAllUserData();
     }
 
 
     private void showAllUserData(){
-        profileName.setText(user.getDisplayName());
-        profileEmail.setText(user.getEmail());
+        String gender;
+        profileUsername.setText(firestoreUsername);
+        profileEmail.setText(firestoreEmail);
+        profileName.setText(firestoreName);
+        profileSurname.setText(firestoreSurname);
+
+        profileAge.setText(firestoreAge.toString());
+
+        if (firestoreGender.toString() == "true")
+        {
+            gender = "Male";
+        }
+        else{
+            gender = "Female";
+        }
+        profileGender.setText(gender);
     }
 
     boolean isEmailValid(CharSequence email) {
@@ -108,8 +137,22 @@ public class ActivityUserProfile extends AppCompatActivity {
 
 
     public void update_profile(View view){
-        if(isNameChanged() || isEmailChanged()){
-            Toast.makeText(this,"Data has been updated",Toast.LENGTH_SHORT).show();
+        getFirestoreVariables();
+
+        if(isSurnameChanged() || isEmailChanged() || isNameChanged() || isUsernameChanged()){
+            if (isSurnameChanged()){
+                changeSurname();
+            }
+            if (isNameChanged()){
+                changeName();
+            }
+            if (isUsernameChanged()){
+                changeUsername();
+            }
+            if (isEmailChanged()){
+                changeEmail();
+            }
+            Toast.makeText(this,"Data saved",Toast.LENGTH_SHORT).show();
         }
         else{
             Toast.makeText(this,"Saved data. Nothing to update.",Toast.LENGTH_SHORT).show();
@@ -118,63 +161,154 @@ public class ActivityUserProfile extends AppCompatActivity {
 
     private boolean isEmailChanged() {
 
-        if (!user.getEmail().equals(profileEmail.getText().toString()) &&
-                isEmailValid(profileEmail.getText().toString()))
+        if (!firestoreEmail.equals(profileEmail.getText().toString()))
+//                &&
+//                isEmailValid(profileEmail.getText().toString()))
         {
-            user.updateEmail(profileEmail.getText().toString())
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Log.d(TAG, "User email address updated.");
-                            }
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.d(TAG, "User email was not updated.");
-                        }
-                    });
+//            user.updateEmail(profileEmail.getText().toString())
+//                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<Void> task) {
+//                            if (task.isSuccessful()) {
+//                                Log.d(TAG, "User email address updated.");
+//                            }
+//                        }
+//                    })
+//                    .addOnFailureListener(new OnFailureListener() {
+//                        @Override
+//                        public void onFailure(@NonNull Exception e) {
+//                            Log.d(TAG, "User email was not updated.");
+//                        }
+//                    });
             return true;
         }
-        else if (!user.getEmail().equals(profileEmail.getText().toString()) &&
-                !isEmailValid(profileEmail.getText().toString()))
-        {
-            Toast.makeText(this,"Failed to update info, email is invalid.",Toast.LENGTH_SHORT).show();
-            return false;
-        }
+//        else if (!user.getEmail().equals(profileEmail.getText().toString()) &&
+//                !isEmailValid(profileEmail.getText().toString()))
+//        {
+//            Toast.makeText(this,"Failed to update info, email is invalid.",Toast.LENGTH_SHORT).show();
+//            return false;
+//        }
         else {
             return false;
         }
+    }
 
-
+    private void changeEmail(){
+        DocumentReference docRef = firebaseFirestore.collection("users").document(uid);
+        if (isEmailValid(profileEmail.getText().toString())){
+            docRef.update("email", profileEmail.getText().toString());
+        }
+        else {
+            Toast.makeText(this,"Failed to update email, enter a valid email",Toast.LENGTH_SHORT).show();
+        }
 
     }
 
-    private boolean isNameChanged() {
 
-        if (!user.getDisplayName().equals(profileName.getText().toString())){
+    private void changeUsername(){
+        DocumentReference docRef = firebaseFirestore.collection("users").document(uid);
+        docRef.update("username", profileUsername.getText().toString());
+    }
+    private boolean isUsernameChanged() {
 
-            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                    .setDisplayName(profileName.getText().toString())
-                    .build();
-
-            user.updateProfile(profileUpdates)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Log.d(TAG, "User profile updated.");
-                            }
-                        }
-                    });
+        if (!firestoreUsername.equals(profileUsername.getText().toString())){
             return true;
         }
         else{
             return false;
         }
+//        if (!user.getDisplayName().equals(profileUsername.getText().toString())){
+//
+//            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+//                    .setDisplayName(profileUsername.getText().toString())
+//                    .build();
+//
+//            user.updateProfile(profileUpdates)
+//                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<Void> task) {
+//                            if (task.isSuccessful()) {
+//                                Log.d(TAG, "User profile updated.");
+//                            }
+//                        }
+//                    });
+//            return true;
+//        }
+//        else{
+//            return false;
+//        }
 
+    }
+
+    private void getFirestoreVariables() {
+
+        DocumentReference docRef = firebaseFirestore.collection("users").document(uid);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+
+                    if (document.exists()) {
+                        firestoreEmail = document.getString("email");
+                        firestoreUsername = document.getString("username");
+                        firestoreAge = (Long) document.get("age");
+                        firestoreName = document.getString("name");
+                        firestoreSurname = document.getString("surname");
+                        firestoreGender = (Boolean) document.get("gender");
+//                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                        showAllUserData();
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d(TAG, "Failed to get firestore variables");
+            }
+        });
+    }
+
+    private boolean isAgeChanged(){
+        if (!firestoreAge.equals( profileAge.getText())){
+            DocumentReference docRef = firebaseFirestore.collection("users").document(uid);
+            docRef.update("age", profileAge.getText());
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    private void changeName(){
+        DocumentReference docRef = firebaseFirestore.collection("users").document(uid);
+        docRef.update("name", profileName.getText().toString());
+    }
+
+    private boolean isNameChanged(){
+        if (!firestoreName.equals(profileName.getText().toString())){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    private void changeSurname(){
+        DocumentReference docRef = firebaseFirestore.collection("users").document(uid);
+        docRef.update("surname", profileSurname.getText().toString());
+    }
+    private boolean isSurnameChanged(){
+        if (!firestoreSurname.equals(profileSurname.getText().toString())){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
 
@@ -197,13 +331,13 @@ public class ActivityUserProfile extends AppCompatActivity {
         }
     }
 
-    private void loadImagePlaceholder(){
-        Picasso.get()
-                .load( R.drawable.loading_image )
-                .error( R.drawable.error_image )
-                .placeholder( R.drawable.progress_animation )
-                .into( profileImage );
-    }
+//    private void loadImagePlaceholder(){
+//        Picasso.get()
+//                .load( R.drawable.loading_image )
+//                .error( R.drawable.error_image )
+//                .placeholder( R.drawable.progress_animation )
+//                .into( profileImage );
+//    }
 
     private void uploadPicture() {
 
