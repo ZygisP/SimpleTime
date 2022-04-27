@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
@@ -16,6 +17,7 @@ import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_registration.*
+import java.util.*
 
 
 private lateinit var auth: FirebaseAuth
@@ -43,11 +45,10 @@ class ActivityRegistration : AppCompatActivity() {
 
     fun register(view: View) {
         val email = signup_enterEmail.text.toString()
-        val nickname = signup_enterName.text.toString()
+        val username = signup_enterName.text.toString()
         val password = signup_enterPassword.text.toString();
-        if (email.isNotEmpty() && password.isNotEmpty() && nickname.isNotEmpty())
+        if (email.isNotEmpty() && password.isNotEmpty() && username.isNotEmpty())
             {
-
 
                 auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener() { task ->
 
@@ -56,21 +57,22 @@ class ActivityRegistration : AppCompatActivity() {
                         val db = FirebaseFirestore.getInstance()
                         val authUser = auth.currentUser
 
-                        authUser?.updateProfile(userProfileChangeRequest { displayName = nickname })
+                        authUser?.updateProfile(userProfileChangeRequest { displayName = username })
                         sendEmailVerification()
 
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         finish()
 
-                        val user: MutableMap<String, Any> = HashMap()
-                        user["nickname"] = nickname
-                        user["name"] = ""
-                        user["surname"] = ""
-                        user["age"] = 0
-                        user["email"] = email
-                        user["password"] = password
-                        user["gender"] = false  // true = male  false = female
+                        val user = hashMapOf(
+                            "name" to "name",
+                            "surname" to "surname",
+                            "age" to 0,
+                            "gender" to true, // True = male, False = female
+                            "username" to username,
+                            "email" to email,
+                            "password" to password
+                        )
 
                         // Add a new document with an auth generated ID
                         db.collection("users").document(authUser?.uid.toString()).set(user)
