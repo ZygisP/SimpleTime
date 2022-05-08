@@ -86,8 +86,6 @@ class ActivityVideoPage : AppCompatActivity() {
             ReportButton.x = 600F
             PopUp3.x = 0F
             PopUp2.x = 0F
-            imageView10.scaleY = 3.5F
-            imageView10.y = 1500F
         }
         PopUp2.setOnClickListener {
             PopUp1.setImageResource(R.drawable.star)
@@ -112,8 +110,6 @@ class ActivityVideoPage : AppCompatActivity() {
             ReportButton.x = 600F
             PopUp3.x = 0F
             PopUp2.x = 0F
-            imageView10.scaleY = 3.5F
-            imageView10.y = 1500F
         }
         PopUp3.setOnClickListener {
             PopUp1.setImageResource(R.drawable.star)
@@ -138,8 +134,6 @@ class ActivityVideoPage : AppCompatActivity() {
             ReportButton.x = 600F
             PopUp3.x = 0F
             PopUp2.x = 0F
-            imageView10.scaleY = 3.5F
-            imageView10.y = 1500F
         }
         PopUp4.setOnClickListener {
             PopUp1.setImageResource(R.drawable.star)
@@ -164,8 +158,6 @@ class ActivityVideoPage : AppCompatActivity() {
             ReportButton.x = 600F
             PopUp3.x = 0F
             PopUp2.x = 0F
-            imageView10.scaleY = 3.5F
-            imageView10.y = 1500F
         }
         PopUp5.setOnClickListener {
             PopUp1.setImageResource(R.drawable.star)
@@ -190,8 +182,6 @@ class ActivityVideoPage : AppCompatActivity() {
             ReportButton.x = 600F
             PopUp3.x = 0F
             PopUp2.x = 0F
-            imageView10.scaleY = 3.5F
-            imageView10.y = 1500F
         }
         imageButton18.setOnClickListener{
             val intent = Intent(this, ActivityDonation::class.java);

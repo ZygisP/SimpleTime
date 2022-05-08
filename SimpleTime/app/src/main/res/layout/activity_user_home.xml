@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundimage"
-    tools:context=".UserHomeActivity" >
+    tools:context=".UserHomeActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-14dp">
 
     <Button
         android:id="@+id/userHome_btnMood"
@@ -113,12 +115,12 @@
 
     <TextView
         android:id="@+id/userHome_userGreeting"
-        android:layout_marginTop="124dp"
         android:layout_width="192dp"
         android:layout_height="63dp"
+        android:layout_marginTop="124dp"
+        android:gravity="center_horizontal|top"
         android:text="@string/usergreet"
         android:textAppearance="@style/categories"
-        android:gravity="center_horizontal|top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
@@ -148,6 +150,56 @@
         app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="53dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/usericon"
+        android:scaleX="1"
+        android:scaleY="1"
+        app:layout_constraintStart_toStartOf="@+id/userHome_sidebar"
+        app:layout_constraintTop_toTopOf="@+id/userHome_sidebar" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="53dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="129dp"
+        android:layout_marginBottom="233dp"
+        android:background="@drawable/maskgroup"
+        android:scaleX="1"
+        android:scaleY="1"
+        app:layout_constraintBottom_toBottomOf="@+id/userHome_sidebar"
+        app:layout_constraintStart_toStartOf="@+id/userHome_sidebar"
+        app:layout_constraintTop_toTopOf="@+id/userHome_sidebar" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="53dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="216dp"
+        android:background="@drawable/notifications"
+        android:scaleX="1"
+        android:scaleY="1"
+        app:layout_constraintStart_toStartOf="@+id/userHome_sidebar"
+        app:layout_constraintTop_toTopOf="@+id/userHome_sidebar" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="53dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="303dp"
+        android:background="@drawable/podcast"
+        android:scaleX="1"
+        android:scaleY="1"
+        app:layout_constraintStart_toStartOf="@+id/userHome_sidebar"
+        app:layout_constraintTop_toTopOf="@+id/userHome_sidebar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
