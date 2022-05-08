@@ -89,4 +89,9 @@
         <item name="android:textColor">#C6A0D8</item>
     </style>
 
+    <style name="categories_white">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
 </resources>

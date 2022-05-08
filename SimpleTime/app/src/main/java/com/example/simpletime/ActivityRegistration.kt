@@ -7,13 +7,10 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
-import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_registration.*
@@ -64,10 +61,14 @@ class ActivityRegistration : AppCompatActivity() {
                         startActivity(intent)
                         finish()
 
+                        val calendar = Calendar.getInstance()
+                        calendar[2018, 11, 31, 23, 59] = 59
+                        val happyNewYearDate = calendar.time
+
                         val user = hashMapOf(
                             "name" to "name",
                             "surname" to "surname",
-                            "age" to 0,
+                            "birthdate" to happyNewYearDate,
                             "gender" to true, // True = male, False = female
                             "username" to username,
                             "email" to email,

@@ -2,6 +2,10 @@ package com.example.simpletime;
 
 import static android.content.ContentValues.TAG;
 
+
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -11,6 +15,7 @@ import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -20,6 +25,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -27,6 +33,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
@@ -42,6 +49,10 @@ import com.google.firestore.v1.WriteResult;
 import com.squareup.picasso.Picasso;
 
 import java.lang.reflect.Array;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -50,18 +61,25 @@ public class ActivityUserProfile extends AppCompatActivity {
 
     private ImageView profileImage;
 
+    private DatePickerDialog datePickerDialog;
+    private Button dateButton;
+
     private Uri imageUri;
     private FirebaseStorage storage;
     private StorageReference storageReference;
     private FirebaseAuth fAuth;
     private FirebaseFirestore firebaseFirestore;
-    EditText profileUsername, profileName, profileSurname, profileEmail, profileAge, profileGender;
+    EditText profileUsername, profileName, profileSurname, profileEmail, profileGender;
     Button btnBack;
-    String firestoreUsername, firestoreName, firestoreSurname, uid, firestoreEmail;
-
+    String firestoreUsername, firestoreName, firestoreSurname, uid, firestoreEmail, date2;
+    Date firestoreBirthdate;
+    Timestamp profileBirthdate;
     Boolean firestoreGender;
-    Long firestoreAge;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    int firebaseYear, firebaseMonth, firebaseDay;
+
+//    Date varBirthdate;
+    String date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +88,9 @@ public class ActivityUserProfile extends AppCompatActivity {
         profileImage = findViewById(R.id.userProfile_profilePicture);
         profileUsername = findViewById(R.id.userProfile_editUsername);
         profileEmail = findViewById(R.id.userProfile_editEmail);
-        profileAge = findViewById(R.id.userProfile_editAge);
         profileName = findViewById(R.id.userProfile_editName);
         profileSurname = findViewById(R.id.userProfile_editSurname);
-        profileGender = findViewById(R.id.userProfile_editGender);
+//        profileBirthdate = findViewById(R.id.userProfile_editAge);
         btnBack = findViewById(R.id.userProfile_btnBack);
         firebaseFirestore = FirebaseFirestore.getInstance();
         fAuth = FirebaseAuth.getInstance();
@@ -81,9 +98,10 @@ public class ActivityUserProfile extends AppCompatActivity {
         storageReference = storage.getReference();
         uid = fAuth.getCurrentUser().getUid();
 
+
         getFirestoreVariables();
-
-
+        initDatePicker();
+        dateButton = findViewById(R.id.userProfile_editAge);
 
 //        loadImagePlaceholder();
         StorageReference profileRef = storageReference.child("users/" + fAuth.getCurrentUser().getUid() + "/profile.jpg");
@@ -108,27 +126,121 @@ public class ActivityUserProfile extends AppCompatActivity {
             }
         });
 
+
+
 //        showAllUserData();
+    }
+
+    private String getTodaysDate()
+    {
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        month = month + 1;
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        return makeDateString(day, month, year);
+    }
+
+    Date varBirthdate;
+    private void initDatePicker()
+    {
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener()
+        {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day)
+            {
+
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(year, month, day, 00, 00, 00);
+                varBirthdate = calendar.getTime();
+                date = makeDateString(day, month + 1, year);
+                Log.d(TAG, "JONAS" + date);
+                Log.d(TAG, "MARGOLIS" + date2);
+                dateButton.setText(date);
+            }
+        };
+
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+
+        int style = AlertDialog.THEME_HOLO_LIGHT;
+
+        datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, day);
+        //datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+
+    }
+
+    private String makeDateString(int day, int month, int year)
+    {
+        return getMonthFormat(month) + " " + day + ", " + year;
+    }
+
+    private String getMonthFormat(int month)
+    {
+        if(month == 1)
+            return "Jan";
+        if(month == 2)
+            return "Feb";
+        if(month == 3)
+            return "Mar";
+        if(month == 4)
+            return "Apr";
+        if(month == 5)
+            return "May";
+        if(month == 6)
+            return "Jun";
+        if(month == 7)
+            return "Jul";
+        if(month == 8)
+            return "Aug";
+        if(month == 9)
+            return "Sep";
+        if(month == 10)
+            return "Oct";
+        if(month == 11)
+            return "Nov";
+        if(month == 12)
+            return "Dec";
+
+        //default should never happen
+        return "Jan";
+    }
+
+    public void openDatePicker(View view)
+    {
+        datePickerDialog.show();
     }
 
 
     private void showAllUserData(){
-        String gender;
         profileUsername.setText(firestoreUsername);
         profileEmail.setText(firestoreEmail);
         profileName.setText(firestoreName);
         profileSurname.setText(firestoreSurname);
 
-        profileAge.setText(firestoreAge.toString());
 
-        if (firestoreGender.toString() == "true")
-        {
-            gender = "Male";
-        }
-        else{
-            gender = "Female";
-        }
-        profileGender.setText(gender);
+        Date date = firestoreBirthdate;
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        firebaseYear = cal.get(Calendar.YEAR);
+        firebaseMonth = cal.get(Calendar.MONTH);
+        firebaseDay = cal.get(Calendar.DAY_OF_MONTH);
+//        getMonthFormat(firebaseMonth) + " " + firebaseDay + ", " + firebaseYear;
+//        date2 = makeDateString(firebaseDay,firebaseMonth+1,firebaseYear);
+        dateButton.setText(getMonthFormat(firebaseMonth+1) + " " + firebaseDay + ", " + firebaseYear);
+
+//        profileAge.setText(firestoreAge.toString());
+
+//        if (firestoreGender.toString() == "true")
+//        {
+//            gender = "Male";
+//        }
+//        else{
+//            gender = "Female";
+//        }
+//        profileGender.setText(gender);
     }
 
     boolean isEmailValid(CharSequence email) {
@@ -136,10 +248,13 @@ public class ActivityUserProfile extends AppCompatActivity {
     }
 
 
+
     public void update_profile(View view){
         getFirestoreVariables();
 
-        if(isSurnameChanged() || isEmailChanged() || isNameChanged() || isUsernameChanged()){
+
+        if(isSurnameChanged() || isEmailChanged() || isNameChanged() || isUsernameChanged() || isAgeChanged()){
+
             if (isSurnameChanged()){
                 changeSurname();
             }
@@ -149,10 +264,17 @@ public class ActivityUserProfile extends AppCompatActivity {
             if (isUsernameChanged()){
                 changeUsername();
             }
+            if (isAgeChanged()){
+                changeAge();
+            }
+
             if (isEmailChanged()){
                 changeEmail();
             }
             Toast.makeText(this,"Data saved",Toast.LENGTH_SHORT).show();
+
+
+            finish();
         }
         else{
             Toast.makeText(this,"Saved data. Nothing to update.",Toast.LENGTH_SHORT).show();
@@ -252,10 +374,10 @@ public class ActivityUserProfile extends AppCompatActivity {
                     if (document.exists()) {
                         firestoreEmail = document.getString("email");
                         firestoreUsername = document.getString("username");
-                        firestoreAge = (Long) document.get("age");
                         firestoreName = document.getString("name");
                         firestoreSurname = document.getString("surname");
-                        firestoreGender = (Boolean) document.get("gender");
+                        firestoreBirthdate = document.getDate("birthdate");   // NEEDS TO BE TIMESTAMP
+                        firestoreGender = document.getBoolean("gender");
 //                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                         showAllUserData();
                     } else {
@@ -274,15 +396,19 @@ public class ActivityUserProfile extends AppCompatActivity {
     }
 
     private boolean isAgeChanged(){
-        if (!firestoreAge.equals( profileAge.getText())){
-            DocumentReference docRef = firebaseFirestore.collection("users").document(uid);
-            docRef.update("age", profileAge.getText());
+        if (date != date2){
             return true;
         }
         else{
             return false;
         }
     }
+
+    private void changeAge(){
+        DocumentReference docRef = firebaseFirestore.collection("users").document(uid);
+        docRef.update("birthdate", varBirthdate);
+    }
+
 
     private void changeName(){
         DocumentReference docRef = firebaseFirestore.collection("users").document(uid);
@@ -330,6 +456,13 @@ public class ActivityUserProfile extends AppCompatActivity {
 
         }
     }
+
+
+
+
+
+
+
 
 //    private void loadImagePlaceholder(){
 //        Picasso.get()
