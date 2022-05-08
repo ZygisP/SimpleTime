@@ -15,7 +15,7 @@
         style="@style/log_in"
         android:layout_width="96dp"
         android:layout_height="48dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="72dp"
         android:background="@drawable/smallbutton"
         android:elevation="4dp"
         android:fontFamily="@font/poppins_medium"
@@ -24,7 +24,7 @@
         android:textAppearance="@style/back"
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="@+id/uploadv"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="@+id/uploadv"
         app:layout_constraintTop_toBottomOf="@+id/uploadv"
         tools:ignore="OnClick" />
@@ -34,7 +34,7 @@
         style="@style/log_in"
         android:layout_width="96dp"
         android:layout_height="48dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="72dp"
         android:background="@drawable/smallbutton"
         android:elevation="4dp"
         android:fontFamily="@font/poppins_medium"
@@ -114,17 +114,18 @@
         style="@style/log_in"
         android:layout_width="296dp"
         android:layout_height="56dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/filledbutton"
         android:elevation="4dp"
         android:fontFamily="@font/poppins_medium"
         android:text="Select video file"
+
         android:textAppearance="@style/log_in"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="@+id/upload_editDescription"
+        app:layout_constraintEnd_toEndOf="@+id/upload_videoName"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/upload_editDescription"
-        app:layout_constraintTop_toBottomOf="@+id/upload_editDescription" />
+        app:layout_constraintStart_toStartOf="@+id/upload_videoName"
+        app:layout_constraintTop_toBottomOf="@+id/upload_videoName" />
 
     <TextView
         android:id="@+id/upload_textIntro"
@@ -142,6 +143,23 @@
         app:layout_constraintHorizontal_bias="0.336"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/upload_videoName"
+        android:layout_width="267dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="36dp"
+        android:ellipsize="end"
+        android:gravity="top"
+        android:maxLines="1"
+        android:paddingStart="4dp"
+        android:text="Video name"
+        android:textAppearance="@style/categories"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/upload_editDescription"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/upload_editDescription"
+        app:layout_constraintTop_toBottomOf="@+id/upload_editDescription" />
 
 
     <!--  Log in button -->
