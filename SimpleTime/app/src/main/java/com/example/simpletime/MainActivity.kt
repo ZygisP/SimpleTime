@@ -31,10 +31,14 @@ class MainActivity : AppCompatActivity() {
         login_btnLogin.setOnClickListener{
          login(it)
         }
+
         login_btnForgotPassword.setOnClickListener{
             val intent = Intent(this, ActivityForgotPassword::class.java);
             startActivity(intent)
-
+        }
+        login_btnForgotUsername.setOnClickListener{
+            val intent = Intent(this, ActivityFeed::class.java)
+            startActivity(intent)
         }
     }
     fun login(view: View) {
