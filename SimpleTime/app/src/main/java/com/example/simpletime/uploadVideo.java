@@ -108,7 +108,6 @@ public class uploadVideo extends AppCompatActivity {
 
 
 
-
     // choose a video from phone storage
     private void choosevideo() {
         Intent intent = new Intent();
@@ -182,12 +181,12 @@ public class uploadVideo extends AppCompatActivity {
             final StorageReference reference = FirebaseStorage.getInstance().getReference("Videos/" +
                      docName +"."  +  getfiletype(videouri));
             Map<String, Object> video = new HashMap<>();
-            video.put("title", videoName.getText());
+            video.put("title", videoTitle.getText().toString());
+            video.put("description", videoDescription.getText().toString());
             video.put("views", 0);
             video.put("timesRated", 0);
-            video.put("desc", videoDescription.getText().toString());
             video.put("rating", 0);
-            video.put("uploader", fAuth.getCurrentUser().getUid());
+            video.put("uploaderID", fAuth.getCurrentUser().getUid());
             reference.putFile(videouri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
 
                 @Override

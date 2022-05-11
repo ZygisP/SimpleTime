@@ -9,133 +9,130 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="-14dp">
 
+
     <Button
         android:id="@+id/userHome_btnMood"
         style="@style/log_in"
-        android:layout_width="290dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="224dp"
-        android:layout_marginEnd="164dp"
-        android:background="@drawable/filledbutton"
+        android:layout_width="248dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/filledbuttonshort"
         android:elevation="4dp"
         android:fontFamily="@font/poppins_medium"
-        android:paddingStart="64dp"
+
+        android:paddingStart="16dp"
+        android:paddingTop="6dp"
         android:text="@string/mood"
         android:textAlignment="viewStart"
         android:textAppearance="@style/log_in"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userHome_userGreeting" />
 
     <Button
         android:id="@+id/userHome_btnMoodFollowing"
         style="@style/log_in"
-        android:layout_width="290dp"
+        android:layout_width="248dp"
         android:layout_height="54dp"
-        android:layout_marginTop="328dp"
-        android:layout_marginEnd="164dp"
-        android:background="@drawable/filledbutton"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/filledbuttonshort"
         android:elevation="4dp"
         android:fontFamily="@font/poppins_medium"
-        android:paddingStart="64dp"
+        android:paddingStart="16dp"
+        android:paddingTop="6dp"
         android:text="@string/following"
         android:textAlignment="viewStart"
         android:textAppearance="@style/log_in"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userHome_btnMood" />
+
 
     <Button
         android:id="@+id/userHome_btnMoodDailytop"
         style="@style/log_in"
-        android:layout_width="290dp"
+        android:layout_width="248dp"
         android:layout_height="54dp"
-        android:layout_marginTop="432dp"
-        android:layout_marginEnd="164dp"
-        android:background="@drawable/filledbutton"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/filledbuttonshort"
         android:elevation="4dp"
         android:fontFamily="@font/poppins_medium"
-        android:paddingStart="64dp"
+        android:paddingStart="16dp"
+        android:paddingTop="6dp"
         android:text="@string/dailytop"
         android:textAlignment="viewStart"
         android:textAppearance="@style/log_in"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userHome_btnMoodFollowing" />
 
     <Button
         android:id="@+id/userHome_btnWeeklytop"
         style="@style/log_in"
-        android:layout_width="290dp"
+        android:layout_width="248dp"
         android:layout_height="54dp"
-        android:layout_marginTop="536dp"
-        android:layout_marginEnd="164dp"
-        android:background="@drawable/filledbutton"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/filledbuttonshort"
         android:elevation="4dp"
         android:fontFamily="@font/poppins_medium"
-        android:paddingStart="64dp"
+        android:paddingStart="16dp"
+        android:paddingTop="6dp"
         android:text="@string/weeklytop"
         android:textAlignment="viewStart"
         android:textAppearance="@style/log_in"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userHome_btnMoodDailytop" />
 
     <Button
         android:id="@+id/userHome_btnOfficial"
         style="@style/log_in"
-        android:layout_width="290dp"
+        android:layout_width="248dp"
         android:layout_height="54dp"
-        android:layout_marginTop="640dp"
-        android:layout_marginEnd="164dp"
-        android:background="@drawable/filledbutton"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/filledbuttonshort"
         android:elevation="4dp"
         android:fontFamily="@font/poppins_medium"
-        android:paddingStart="64dp"
+        android:paddingStart="16dp"
+        android:paddingTop="6dp"
         android:text="@string/official"
         android:textAlignment="viewStart"
         android:textAppearance="@style/log_in"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userHome_btnWeeklytop" />
 
     <ImageView
         android:id="@+id/userHome_sidebar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="356dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.817"
+        android:layout_marginTop="128dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userHome_btnSearch"
         app:srcCompat="@drawable/strokebuttonvertical" />
 
     <TextView
         android:id="@+id/userHome_userGreeting"
-        android:layout_width="192dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="124dp"
-        android:gravity="center_horizontal|top"
+        android:layout_width="206dp"
+        android:layout_height="53dp"
+
+        android:layout_marginTop="32dp"
         android:text="@string/usergreet"
         android:textAppearance="@style/categories"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.101"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/userHome_categories"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="@+id/userHome_categories"
+        app:layout_constraintTop_toBottomOf="@+id/userHome_categories" />
 
     <TextView
         android:id="@+id/userHome_categories"
         android:layout_width="192dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="48dp"
-        android:gravity="center_horizontal|top"
+        android:layout_height="34dp"
+        android:layout_marginStart="48dp"
+
+        android:layout_marginTop="56dp"
         android:text="@string/categories"
         android:textAppearance="@style/categories"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -143,12 +140,10 @@
         android:id="@+id/userHome_btnSearch"
         android:layout_width="80dp"
         android:layout_height="55dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="48dp"
         android:background="@drawable/strokebuttonsmall"
-        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -156,10 +151,12 @@
         android:layout_width="53dp"
         android:layout_height="46dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/usericon"
         android:scaleX="1"
         android:scaleY="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="@+id/userHome_sidebar"
         app:layout_constraintTop_toTopOf="@+id/userHome_sidebar" />
 
@@ -167,39 +164,51 @@
         android:id="@+id/button13"
         android:layout_width="53dp"
         android:layout_height="46dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="129dp"
-        android:layout_marginBottom="233dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/maskgroup"
         android:scaleX="1"
         android:scaleY="1"
-        app:layout_constraintBottom_toBottomOf="@+id/userHome_sidebar"
-        app:layout_constraintStart_toStartOf="@+id/userHome_sidebar"
-        app:layout_constraintTop_toTopOf="@+id/userHome_sidebar" />
+        app:layout_constraintEnd_toEndOf="@+id/button5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button5"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
     <Button
         android:id="@+id/button15"
         android:layout_width="53dp"
         android:layout_height="46dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/notifications"
         android:scaleX="1"
         android:scaleY="1"
-        app:layout_constraintStart_toStartOf="@+id/userHome_sidebar"
-        app:layout_constraintTop_toTopOf="@+id/userHome_sidebar" />
+        app:layout_constraintEnd_toEndOf="@+id/button13"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/button13"
+        app:layout_constraintTop_toBottomOf="@+id/button13" />
 
     <Button
         android:id="@+id/button16"
         android:layout_width="53dp"
         android:layout_height="46dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="303dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/podcast"
         android:scaleX="1"
         android:scaleY="1"
-        app:layout_constraintStart_toStartOf="@+id/userHome_sidebar"
-        app:layout_constraintTop_toTopOf="@+id/userHome_sidebar" />
+        app:layout_constraintEnd_toEndOf="@+id/button15"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button15"
+        app:layout_constraintTop_toBottomOf="@+id/button15" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="54dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/img"
+        app:layout_constraintEnd_toEndOf="@+id/userHome_btnSearch"
+        app:layout_constraintHorizontal_bias="0.653"
+        app:layout_constraintStart_toStartOf="@+id/userHome_btnSearch"
+        app:layout_constraintTop_toTopOf="@+id/userHome_btnSearch" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

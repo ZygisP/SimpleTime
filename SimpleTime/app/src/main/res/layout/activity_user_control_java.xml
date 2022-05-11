@@ -9,7 +9,6 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="-12dp">
 
-
     <Button
         android:id="@+id/upload_btnSave"
         style="@style/log_in"
@@ -58,6 +57,8 @@
         android:hint="Enter video description"
         android:paddingStart="18dp"
         android:paddingTop="9dp"
+        android:paddingRight="18dp"
+        android:paddingBottom="9dp"
         app:layout_constraintEnd_toEndOf="@+id/upload_textDescription"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/upload_textDescription"
