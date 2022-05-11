@@ -1,6 +1,8 @@
 package com.example.simpletime;
 
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
@@ -10,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
+import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -25,12 +28,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class uploadVideo extends AppCompatActivity {
 
@@ -39,6 +45,8 @@ public class uploadVideo extends AppCompatActivity {
     EditText videoTitle, videoDescription;
     ProgressDialog progressDialog;
     private FirebaseAuth fAuth;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 
 
     @Override
@@ -169,13 +177,39 @@ public class uploadVideo extends AppCompatActivity {
 
     private void uploadvideo() {
         if (videouri != null) {
+            String docName = "" + System.currentTimeMillis();
             // save the selected video in Firebase storage
             final StorageReference reference = FirebaseStorage.getInstance().getReference("Videos/" +
-                    fAuth.getCurrentUser().getUid() +"/" + System.currentTimeMillis() +"."  +  getfiletype(videouri));
+                     docName +"."  +  getfiletype(videouri));
+            Map<String, Object> video = new HashMap<>();
+            video.put("title", videoName.getText());
+            video.put("views", 0);
+            video.put("timesRated", 0);
+            video.put("desc", videoDescription.getText().toString());
+            video.put("rating", 0);
+            video.put("uploader", fAuth.getCurrentUser().getUid());
             reference.putFile(videouri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
 
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Log.d(TAG, "WORKS");
+                    progressDialog.dismiss();
+
+                    Log.d(TAG, "WORKS");
+                    db.collection("videos").document(docName)
+                            .set(video)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(TAG, "Added document with ID: "+ docName);
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w(TAG, "Error adding document to collection", e);
+                                }
+                            });
 //                    Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
 //                    while (!uriTask.isSuccessful()) ;
 //                    // get the link of video
@@ -186,7 +220,6 @@ public class uploadVideo extends AppCompatActivity {
 //                    reference1.child("" + System.currentTimeMillis()).setValue(map);
                     // Video uploaded successfully
                     // Dismiss dialog
-                    progressDialog.dismiss();
                     Toast.makeText(uploadVideo.this, "Video successfully uploaded!", Toast.LENGTH_LONG).show();
                     finish();
 

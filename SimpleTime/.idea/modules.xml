@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SimpleTime.iml" filepath="$PROJECT_DIR$/.idea/modules/SimpleTime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SimpleTime.SimpleTime.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SimpleTime.SimpleTime.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SimpleTime.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SimpleTime.app.iml" />
     </modules>
   </component>
