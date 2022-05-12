@@ -9,116 +9,106 @@
     tools:layout_editor_absoluteX="32dp"
     tools:layout_editor_absoluteY="0dp">
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="96dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/smallbutton"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/videopage_title"
-        android:layout_width="192dp"
-        android:layout_height="63dp"
+        android:layout_width="274dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
-        android:gravity="center_horizontal|top"
+
+        android:paddingLeft="12dp"
+        android:paddingTop="4dp"
         android:text="Title"
         android:textAppearance="@style/categories"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="412dp"
-        android:layout_height="217dp"
-        android:layout_marginTop="111dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/uploaderPicture"
-        android:layout_width="45dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="348dp"
-        android:layout_marginEnd="356dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
         android:background="@null"
-        android:scaleX="1.5"
-        android:scaleY="1.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:scaleX="1"
+        android:scaleY="1"
         android:src="@drawable/usericon"
+        app:layout_constraintEnd_toEndOf="@+id/imageView12"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="180dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="348dp"
-        android:layout_marginEnd="169dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/filledbutton" />
+    <TextView
+        android:id="@+id/videoPage_uploaderName"
+        android:layout_width="115dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/usernamerectanglle"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/uploaderPicture"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+    <TextView
+        android:id="@+id/videoPage_rating"
+        android:layout_width="67dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/ratingrectangle"
+        android:gravity="center"
+        android:paddingLeft="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/videoPage_viewCount"
+        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintStart_toEndOf="@+id/videoPage_uploaderName"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+    <TextView
+        android:id="@+id/videoPage_viewCount"
+        android:layout_width="67dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/ratingrectangle"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/imageView12"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+    <TextView
+        android:id="@+id/videoPage_description"
+        android:layout_width="360dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/descriptionrectangle"
+        android:elevation="4dp"
+        android:gravity="top"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView12"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintTop_toBottomOf="@+id/videoPage_uploaderName" />
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="97dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="347dp"
-        android:layout_marginEnd="79dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/smallbuttonfilled" />
+        android:id="@+id/videoPage_footer"
+        android:layout_width="370dp"
+        android:layout_height="70dp"
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="97dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="347dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/smallbuttonfilled" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="396dp"
-        android:layout_height="205dp"
-        android:layout_marginTop="388dp"
-        android:layout_marginEnd="8dp"
-        android:scaleY="2.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/filledbutton" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="396dp"
-        android:layout_height="146dp"
-        android:layout_marginTop="688dp"
-        android:layout_marginEnd="9dp"
-        android:scaleY="2.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/filledbutton" />
+        android:background="@drawable/videopagefooter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/videoPage_description"
+        app:layout_constraintStart_toStartOf="@+id/videoPage_description" />
 
     <ImageButton
         android:id="@+id/PopUp1"
         android:layout_width="45dp"
         android:layout_height="49dp"
-        android:layout_marginTop="595dp"
-        android:layout_marginEnd="267dp"
+        android:layout_marginStart="12dp"
         android:background="@null"
         android:scaleX="1.5"
         android:scaleY="1.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/videoPage_footer"
+        app:layout_constraintStart_toEndOf="@+id/ReportButton"
+        app:layout_constraintTop_toBottomOf="@+id/videoPage_description"
         app:srcCompat="@drawable/star2"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -126,111 +116,27 @@
         android:id="@+id/PopUp5"
         android:layout_width="45dp"
         android:layout_height="49dp"
-        android:layout_marginTop="595dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginStart="12dp"
         android:background="@null"
         android:scaleX="1.5"
         android:scaleY="1.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/videoPage_footer"
+        app:layout_constraintStart_toEndOf="@+id/PopUp4"
+        app:layout_constraintTop_toBottomOf="@+id/videoPage_description"
         app:srcCompat="@drawable/star2"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/ReportButton"
+        android:id="@+id/PopUp2"
         android:layout_width="45dp"
         android:layout_height="49dp"
-        android:layout_marginTop="595dp"
-        android:layout_marginEnd="316dp"
+        android:layout_marginStart="12dp"
         android:background="@null"
         android:scaleX="1.5"
         android:scaleY="1.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/reportbutton"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/imageButton11"
-        android:layout_width="52dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="676dp"
-        android:layout_marginEnd="324dp"
-        android:background="@null"
-        android:scaleX="1.75"
-        android:scaleY="1.75"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/maskgroup"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/imageButton14"
-        android:layout_width="52dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="676dp"
-        android:layout_marginEnd="252dp"
-        android:background="@null"
-        android:scaleX="1.75"
-        android:scaleY="1.75"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/sraide"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/imageButton15"
-        android:layout_width="60dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="672dp"
-        android:layout_marginEnd="176dp"
-        android:background="@null"
-        android:scaleX="2"
-        android:scaleY="2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/messagearrow"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/imageButton19"
-        android:layout_width="55dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="676dp"
-        android:layout_marginEnd="111dp"
-        android:background="@null"
-        android:scaleX="1.75"
-        android:scaleY="1.75"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/savebutton"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/imageButton18"
-        android:layout_width="52dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="676dp"
-        android:layout_marginEnd="44dp"
-        android:background="@null"
-        android:scaleX="1.75"
-        android:scaleY="1.75"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/donatebutton"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/PopUp4"
-        android:layout_width="45dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="595dp"
-        android:layout_marginEnd="115dp"
-        android:background="@null"
-        android:scaleX="1.5"
-        android:scaleY="1.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/videoPage_footer"
+        app:layout_constraintStart_toEndOf="@+id/PopUp1"
+        app:layout_constraintTop_toBottomOf="@+id/videoPage_description"
         app:srcCompat="@drawable/star2"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -238,96 +144,197 @@
         android:id="@+id/PopUp3"
         android:layout_width="45dp"
         android:layout_height="49dp"
-        android:layout_marginTop="595dp"
-        android:layout_marginEnd="166dp"
+        android:layout_marginStart="12dp"
         android:background="@null"
         android:scaleX="1.5"
         android:scaleY="1.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/videoPage_footer"
+        app:layout_constraintStart_toEndOf="@+id/PopUp2"
+        app:layout_constraintTop_toBottomOf="@+id/videoPage_description"
         app:srcCompat="@drawable/star2"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/PopUp4"
+        android:layout_width="45dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="12dp"
+        android:background="@null"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintBottom_toTopOf="@+id/videoPage_footer"
+        app:layout_constraintStart_toEndOf="@+id/PopUp3"
+        app:layout_constraintTop_toBottomOf="@+id/videoPage_description"
+        app:srcCompat="@drawable/star2"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/ReportButton"
+        android:layout_width="45dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="12dp"
+        android:background="@null"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintBottom_toTopOf="@+id/videoPage_footer"
+        app:layout_constraintStart_toStartOf="@+id/videoPage_description"
+        app:layout_constraintTop_toBottomOf="@+id/videoPage_description"
+        app:srcCompat="@drawable/reportbutton"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="52dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:background="@null"
+        android:scaleX="1.75"
+        android:scaleY="1.75"
+        app:layout_constraintStart_toStartOf="@+id/videoPage_footer"
+        app:layout_constraintTop_toTopOf="@+id/videoPage_footer"
+        app:srcCompat="@drawable/maskgroup"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton14"
+        android:layout_width="52dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@null"
+        android:scaleX="1.75"
+        android:scaleY="1.75"
+        app:layout_constraintStart_toEndOf="@+id/imageButton11"
+        app:layout_constraintTop_toTopOf="@+id/videoPage_footer"
+        app:srcCompat="@drawable/sraide"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton15"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@null"
+        android:scaleX="2"
+        android:scaleY="2"
+        app:layout_constraintStart_toEndOf="@+id/imageButton14"
+        app:layout_constraintTop_toTopOf="@+id/videoPage_footer"
+        app:srcCompat="@drawable/messagearrow"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton19"
+        android:layout_width="55dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@null"
+        android:scaleX="1.75"
+        android:scaleY="1.75"
+        app:layout_constraintStart_toEndOf="@+id/imageButton15"
+        app:layout_constraintTop_toTopOf="@+id/videoPage_footer"
+        app:srcCompat="@drawable/savebutton"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton18"
+        android:layout_width="52dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@null"
+        android:scaleX="1.75"
+        android:scaleY="1.75"
+        app:layout_constraintStart_toEndOf="@+id/imageButton19"
+        app:layout_constraintTop_toTopOf="@+id/videoPage_footer"
+        app:srcCompat="@drawable/donatebutton"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/Rating"
-        android:layout_width="30dp"
+        android:layout_width="34dp"
         android:layout_height="36dp"
-        android:layout_marginTop="347dp"
-        android:layout_marginEnd="130dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
         android:background="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/videoPage_rating"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/videoPage_rating"
+        app:layout_constraintTop_toTopOf="@+id/videoPage_rating"
         app:srcCompat="@drawable/star"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <ImageButton
-        android:id="@+id/PopUp2"
-        android:layout_width="45dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="595dp"
-        android:layout_marginEnd="216dp"
-        android:background="@null"
-        android:scaleX="1.5"
-        android:scaleY="1.5"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="36dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/star2"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:srcCompat="@drawable/pause" />
+
+
 
     <TextView
-        android:id="@+id/uploader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="63dp"
-        android:layout_marginEnd="59dp"
-        android:text="uploader"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        android:id="@+id/title2"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"/>
 
-    <TextView
-        android:id="@+id/ratingNumb"
-        android:layout_width="32dp"
-        android:layout_height="17dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="7dp"
-        android:text="ratingNumb"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.962"
-        app:layout_constraintStart_toStartOf="@+id/Rating"
-        app:layout_constraintTop_toTopOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/viewsVideo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="9dp"
-        android:text="viewsNumb"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="310dp"
+        android:layout_height="240dp"
 
-    <TextView
-        android:id="@+id/videoDesc"
-        android:layout_width="315dp"
-        android:layout_height="173dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="15dp"
-        android:text="videoDesc"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
-        app:layout_constraintEnd_toEndOf="@+id/imageView10"
-        app:layout_constraintStart_toStartOf="@+id/imageView10"
-        app:layout_constraintTop_toTopOf="@+id/imageView10" />
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="@+id/imageView12"
+        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintTop_toTopOf="@+id/imageView12">
+
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/video_view2"
+            android:layout_width="310dp"
+            android:layout_height="240dp">
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        </com.google.android.exoplayer2.ui.PlayerView>
+
+    </FrameLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="360dp"
+        android:layout_height="246dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/videopage_title"
+        app:layout_constraintTop_toBottomOf="@+id/videopage_title"
+        app:srcCompat="@drawable/rectangle394" />
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
