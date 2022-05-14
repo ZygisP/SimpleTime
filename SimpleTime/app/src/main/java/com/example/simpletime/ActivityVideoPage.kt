@@ -35,11 +35,14 @@ var storage = FirebaseStorage.getInstance()
 var storageReference = storage.getReference()
 
 
+
+
 class ActivityVideoPage : AppCompatActivity(), Player.Listener {
     private lateinit var player2: ExoPlayer
     private lateinit var playerView2: PlayerView
     private lateinit var progressBar2: ProgressBar
     private lateinit var titleTv2: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video_page)

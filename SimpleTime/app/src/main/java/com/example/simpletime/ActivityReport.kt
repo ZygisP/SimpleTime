@@ -2,35 +2,74 @@ package com.example.simpletime
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.CheckBox
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_report.*
-import kotlinx.android.synthetic.main.activity_report.view.*
 
 class ActivityReport : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_report)
-        MenuButtonReport.setOnClickListener {
+
+        var db = FirebaseFirestore.getInstance()
+        db.collection("videos")
+        val docRef = db.collection("videos").document("1652527941187")
+        docRef.get()
+
+        report_btnBack.setOnClickListener{
             val intent = Intent(this, ActivityVideoPage::class.java);
             startActivity(intent)
         }
-        submitReportButton.setOnClickListener{
-            var db = FirebaseFirestore.getInstance()
-            db.collection("videos")
-            val docRef = db.collection("videos").document("eDKfaQu2mhQt40MR06uTDmtgSBm2")
-            docRef.get()
-            if(!checkBox.isChecked() or !checkBox2.isChecked() or !checkBox3.isChecked() or !checkBox4.isChecked() or !checkBox5.isChecked() or !checkBox6.isChecked()){
+
+        report_btnSubmit.setOnClickListener{
+
+            if(report_radioGroup.checkedRadioButtonId == -1){
                 Toast.makeText(
-                    applicationContext, "Select report reason",
+                    applicationContext, "Please select an option.",
                     Toast.LENGTH_LONG
                 ).show()
+            }
+            else if (report_option1.isChecked){
+                docRef.update("reports.0", FieldValue.increment(1))
+                val intent = Intent(this, ActivityVideoPage::class.java);
+                startActivity(intent)
+            }
+            else if (report_option2.isChecked){
+                docRef.update("reports.1", FieldValue.increment(1))
+                val intent = Intent(this, ActivityVideoPage::class.java);
+                startActivity(intent)
+            }
+            else if (report_option3.isChecked){
+                docRef.update("reports.2", FieldValue.increment(1))
+                val intent = Intent(this, ActivityVideoPage::class.java);
+                startActivity(intent)
+            }
+            else if (report_option4.isChecked){
+                docRef.update("reports.3", FieldValue.increment(1))
+                val intent = Intent(this, ActivityVideoPage::class.java);
+                startActivity(intent)
+            }
+            else if (report_option5.isChecked){
+                docRef.update("reports.4", FieldValue.increment(1))
+                val intent = Intent(this, ActivityVideoPage::class.java);
+                startActivity(intent)
+            }
+            else if (report_option6.isChecked){
+                docRef.update("reports.5", FieldValue.increment(1))
+                val intent = Intent(this, ActivityVideoPage::class.java);
+                startActivity(intent)
+            }
+            else if (report_option7.isChecked){
+                val intent = Intent(this, ReportOtherActivity::class.java);
+                startActivity(intent)
             }
 
         }
     }
+
+
+
 }

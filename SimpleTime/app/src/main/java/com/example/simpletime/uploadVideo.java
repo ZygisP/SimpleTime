@@ -35,6 +35,7 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -187,6 +188,8 @@ public class uploadVideo extends AppCompatActivity {
             video.put("timesRated", 0);
             video.put("rating", 0);
             video.put("uploaderID", fAuth.getCurrentUser().getUid());
+            video.put("reports", Arrays.asList(0, 0, 0, 0, 0, 0));
+            video.put("reportsOther", Arrays.asList());
             reference.putFile(videouri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
 
                 @Override
