@@ -1,6 +1,7 @@
 package com.example.simpletime
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
@@ -11,6 +12,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ListResult
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_donation.*
 import kotlinx.android.synthetic.main.activity_feed.*
 import kotlin.random.Random
 
@@ -20,17 +22,23 @@ class ActivityFeed : AppCompatActivity() {
         setContentView(R.layout.activity_feed)
         storage = FirebaseStorage.getInstance()
         storageReference = storage.reference
+        fillFeed()
+
+//        loadImagePlaceholder();
+
+        imageButton13.setOnClickListener{
+            fillFeed()
+        }
+    }
+     private fun fillFeed(){
+        val listRefVids = FirebaseStorage.getInstance().getReference("Videos/")
         var db = FirebaseFirestore.getInstance()
+        com.example.simpletime.db.collection("videos")
         var rand1 = 0
         var rand2 = 0
         var rand3 = 0
         var i = 0
         var j = 0
-        db.collection("videos")
-
-
-//        loadImagePlaceholder();
-        val listRefVids = FirebaseStorage.getInstance().getReference("Videos/")
         listRefVids.listAll()
             .addOnSuccessListener(OnSuccessListener<ListResult> { listResult ->
                 Log.d(TAG, listRefVids.getName())
@@ -126,4 +134,5 @@ class ActivityFeed : AppCompatActivity() {
                     }
                 } })
     }
+
     }
