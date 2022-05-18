@@ -7,94 +7,180 @@
     android:background="@drawable/backgroundimage"
     tools:context=".ActivityFeed">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title3"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"/>
+
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title3"
+        android:background="#000000">
+
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/videoFeed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:id="@+id/progressBar3"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        </com.google.android.exoplayer2.ui.PlayerView>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/videopage_description"
+        android:layout_width="273dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="48dp"
+        android:paddingLeft="12dp"
+        android:paddingTop="4dp"
+        android:text="Description"
+        android:textAppearance="@style/categories"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/videopage_title2"
+        android:layout_width="272dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
+        android:paddingLeft="12dp"
+        android:paddingTop="4dp"
+        android:text="Title"
+        android:textAppearance="@style/categories"
+        app:layout_constraintBottom_toTopOf="@+id/videopage_description"
+        app:layout_constraintEnd_toEndOf="@+id/videopage_description"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/videopage_description" />
+
+    <ImageButton
+        android:id="@+id/imageButton17"
+        android:layout_width="87dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="6dp"
+        android:background="@null"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton16"
+        app:layout_constraintStart_toStartOf="@+id/imageButton16"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton16"
+        app:srcCompat="@drawable/messagearrow"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton16"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="3dp"
+        android:background="@null"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        app:layout_constraintEnd_toEndOf="@+id/reportButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/reportButton"
+        app:layout_constraintTop_toBottomOf="@+id/reportButton"
+        app:srcCompat="@drawable/maskgroup"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/reportButton"
+        android:layout_width="81dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton13"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="@+id/imageButton13"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton13"
+        app:srcCompat="@drawable/reportbutton"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageView5"
+        android:layout_width="89dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="12dp"
+        android:background="@null"
+        android:scaleX="1"
+        android:scaleY="1"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton17"
+        app:layout_constraintStart_toStartOf="@+id/imageButton17"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton17"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/uploaderPicture2"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:background="@null"
+        android:scaleX="1"
+        android:scaleY="1"
+        android:src="@drawable/usericon"
+        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="96dp"
         android:layout_height="55dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="32dp"
         android:background="@null"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toEndOf="@+id/categoryView"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/smallbutton"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="293dp"
-        android:layout_height="159dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="83dp"
-        android:layout_marginEnd="59dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="237dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="87dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
-
-    <ImageView
-        android:id="@+id/imageView19"
-        android:layout_width="293dp"
-        android:layout_height="159dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="57dp"
-        android:layout_marginEnd="59dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="237dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="87dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView19" />
-
-    <ImageView
-        android:id="@+id/imageView23"
-        android:layout_width="293dp"
-        android:layout_height="159dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="59dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView19"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="237dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="87dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView23" />
 
     <ImageButton
         android:id="@+id/imageButton13"
         android:layout_width="47dp"
         android:layout_height="51dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="344dp"
+        android:layout_marginTop="164dp"
         android:background="@null"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/backButton"
+        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintStart_toStartOf="@+id/backButton"
+        app:layout_constraintTop_toBottomOf="@+id/backButton"
+        app:srcCompat="@android:drawable/ic_media_ff" />
+
+    <TextView
+        android:id="@+id/categoryView"
+        android:layout_width="256dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_popup_sync" />
+        android:background="@drawable/filledbutton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

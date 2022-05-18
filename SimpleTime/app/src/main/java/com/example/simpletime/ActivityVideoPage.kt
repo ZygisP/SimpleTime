@@ -83,7 +83,7 @@ class ActivityVideoPage : AppCompatActivity(), Player.Listener {
                     val timesRated = document.getDouble("timesRated")
                     val calcRating = timesRated?.let { BigDecimal(rating?.div(it)!!).setScale(2, RoundingMode.HALF_EVEN) }
                     videoPage_rating.setText(calcRating.toString())
-                    videoPage_uploaderName.setText(document.getString("uploader"))
+                    videoPage_uploaderName.setText(document.getString("uploaderID"))
                     db.collection("users").whereEqualTo("username", "${document.getString("uploader")}")
                     val uploaderPic = document.id
                     val profileImage = findViewById<ImageView>(R.id.uploaderPicture)
