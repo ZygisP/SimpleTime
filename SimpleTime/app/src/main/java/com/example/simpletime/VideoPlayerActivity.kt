@@ -14,7 +14,6 @@ import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.ui.PlayerView
 import com.google.common.collect.ImmutableList
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
 
 
 class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
@@ -34,7 +33,7 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
 
         titleTv = findViewById(R.id.title)
 
-        getUrlAsync("1650383898885")
+//        getUrlAsync("1650383898885")
 
         //setupPlayer()
         //addMP4Files()
@@ -89,7 +88,9 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
         player = ExoPlayer.Builder(this).build()
         playerView = findViewById(R.id.video_view)
         playerView.player = player
+        playerView.hideController()
         player.addListener(this)
+        player.playWhenReady = true
     }
 
 
@@ -137,10 +138,18 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
         outState.putLong("SeekTime", player.currentPosition)
         // current mediaItem
         outState.putInt("mediaItem", player.currentMediaItemIndex)
+
+    }
+
+     fun onDestroyView() {
+//         player.playWhenReady = false
+         player.stop()
+         player.seekTo(0)
     }
 
     override fun onDestroy() {
         super.onDestroy()
+
         Log.d(TAG, "onSaveInstanceState: " + player.currentPosition)
     }
 
