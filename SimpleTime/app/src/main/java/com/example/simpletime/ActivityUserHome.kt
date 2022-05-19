@@ -48,8 +48,23 @@ class ActivityUserHome : AppCompatActivity() {
         userHome_btnMoodDailytop.setOnClickListener{
             val intent = Intent(this, uploadVideo::class.java)
             startActivity(intent)
-
         }
+        button5.setOnClickListener{
+                val intent = Intent(this, ActivityMyProfile::class.java);
+                startActivity(intent)
+            }
+        button13.setOnClickListener{
+                val intent = Intent(this, ActivityMessages::class.java);
+                startActivity(intent)
+            }
+        button15.setOnClickListener{
+                val intent = Intent(this, ActivityNotifications::class.java);
+                startActivity(intent)
+            }
+        button16.setOnClickListener{
+                val intent = Intent(this, ActivityEvents::class.java);
+                startActivity(intent)
+            }
     }
 }
 
