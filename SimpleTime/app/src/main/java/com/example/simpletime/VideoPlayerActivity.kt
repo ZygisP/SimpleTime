@@ -88,7 +88,6 @@ class VideoPlayerActivity : AppCompatActivity(), Player.Listener {
         player = ExoPlayer.Builder(this).build()
         playerView = findViewById(R.id.video_view)
         playerView.player = player
-        playerView.hideController()
         player.addListener(this)
         player.playWhenReady = true
     }

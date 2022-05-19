@@ -41,12 +41,10 @@ class ActivityFeed : AppCompatActivity(), Player.Listener {
         progressBar3 = findViewById(R.id.progressBar3)
 
         titleTv3 = findViewById(R.id.title3)
-
-//        getUrlAsync("1650383898885")
+        fillFeed()
 
         //setupPlayer()
         //addMP4Files()
-
 
         // restore player state on Rotation
         if (savedInstanceState != null) {
@@ -57,8 +55,9 @@ class ActivityFeed : AppCompatActivity(), Player.Listener {
                 player3.play()
             }
         }
-        fillFeed()
+
         imageButton13.setOnClickListener {
+            player3.stop()
             fillFeed()
         }
         reportButton.setOnClickListener {
@@ -90,7 +89,7 @@ class ActivityFeed : AppCompatActivity(), Player.Listener {
     private fun getUrlAsync(name: String): String {
         var tempLink = "link"
         var storageRef = FirebaseStorage.getInstance().getReference()
-        var nameRef = storageRef.child("Videos").child("eDKfaQu2mhQt40MR06uTDmtgSBm2/" + name + ".mp4")
+        var nameRef = storageRef.child("Videos").child(name + ".mp4")
         nameRef.downloadUrl.addOnSuccessListener {
             Log.d(TAG, it.toString())
             tempLink = it.toString()
@@ -108,7 +107,9 @@ class ActivityFeed : AppCompatActivity(), Player.Listener {
         player3 = ExoPlayer.Builder(this).build()
         playerView3 = findViewById(R.id.videoFeed)
         playerView3.player = player3
+        playerView3.hideController()
         player3.addListener(this)
+        player3.playWhenReady = true
     }
 
 
@@ -119,7 +120,6 @@ class ActivityFeed : AppCompatActivity(), Player.Listener {
 
     override fun onResume() {
         super.onResume()
-        getUrlAsync("1650383898885")
     }
 
     // handle loading
@@ -132,7 +132,7 @@ class ActivityFeed : AppCompatActivity(), Player.Listener {
                 progressBar3.visibility = View.INVISIBLE
             }
             Player.STATE_ENDED -> {
-                progressBar3.visibility = View.INVISIBLE
+                fillFeed()
             }
             Player.STATE_IDLE -> {
                 progressBar3.visibility = View.INVISIBLE
@@ -167,9 +167,11 @@ class ActivityFeed : AppCompatActivity(), Player.Listener {
     }
 
 
+
     private fun fillFeed() {
         val listRefVids = FirebaseStorage.getInstance().getReference("Videos/")
         var db = FirebaseFirestore.getInstance()
+
         com.example.simpletime.db.collection("videos")
         var rand1 = 0
         var i = 0
@@ -193,6 +195,7 @@ class ActivityFeed : AppCompatActivity(), Player.Listener {
                             .addOnSuccessListener { document ->
                                 if (document != null) {
                                     Log.d(TAG, "Pulled video for 1:" + vidname)
+                                    getUrlAsync(vidname)
                                     videopage_title2.text = document.getString("title")
                                     videopage_description.text = document.getString("desc")
                                     val uploaderPic = document.getString("uploaderID")
