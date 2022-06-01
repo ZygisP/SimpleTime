@@ -16,7 +16,7 @@ class ActivityUserHome : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_home)
-
+        var sortType = ""
         val db = FirebaseFirestore.getInstance()
         val docRef = db.collection("users").document(user?.uid.toString())
         docRef.get()
@@ -34,19 +34,33 @@ class ActivityUserHome : AppCompatActivity() {
             }
 
         userHome_btnMood.setOnClickListener{
-            val intent = Intent(this, ActivityVideoPage::class.java);
+            sortType = "mood"
+            val intent = Intent(this, ActivityFeed::class.java);
+            intent.putExtra("sort", sortType)
             startActivity(intent)
         }
         userHome_btnMoodFollowing.setOnClickListener {
-            val intent = Intent(this, VideoPlayerActivity::class.java)
+            sortType = "following"
+            val intent = Intent(this, ActivityFeed::class.java)
+            intent.putExtra("sort", sortType)
             startActivity(intent)
         }
         userHome_btnOfficial.setOnClickListener {
-            val intent = Intent(this, ActivityUserProfile::class.java);
+            sortType = ""
+            val intent = Intent(this, ActivityFeed::class.java);
+            intent.putExtra("sort", sortType)
             startActivity(intent)
         }
         userHome_btnMoodDailytop.setOnClickListener{
-            val intent = Intent(this, uploadVideo::class.java)
+            sortType = "dailytop"
+            val intent = Intent(this, ActivityFeed::class.java)
+            intent.putExtra("sort", sortType)
+            startActivity(intent)
+        }
+        userHome_btnWeeklytop.setOnClickListener{
+            sortType = "weeklytop"
+            val intent = Intent(this, ActivityFeed::class.java)
+            intent.putExtra("sort", sortType)
             startActivity(intent)
         }
         button5.setOnClickListener{

@@ -165,17 +165,31 @@ class ActivityFeed : AppCompatActivity(), Player.Listener {
     companion object {
         private const val TAG = "VideoPlayerActivity"
     }
-
+//    private fun sortByViews(vidname: String) {
+//            getUrlAsync(vidname)
+//            videopage_title2.text = document.getString("title")
+//            videopage_description.text = document.getString("desc")
+//            val uploaderPic = document.getString("uploaderID")
+//            val profileImage =
+//                findViewById<ImageView>(R.id.uploaderPicture2)
+//            val profileRef = storageReference.child(
+//                "users/" + uploaderPic + "/profile.jpg"
+//            )
+//            profileRef.downloadUrl.addOnSuccessListener { uri ->
+//                Picasso.get().load(uri).into(profileImage)
+//            }
+//    }
 
 
     private fun fillFeed() {
         val listRefVids = FirebaseStorage.getInstance().getReference("Videos/")
         var db = FirebaseFirestore.getInstance()
-
+        val sortType = intent.extras
         com.example.simpletime.db.collection("videos")
         var rand1 = 0
         var i = 0
         var j = 0
+        if(sortType?.getString("sort") == "mood"){
         listRefVids.listAll()
             .addOnSuccessListener(OnSuccessListener<ListResult> { listResult ->
                 Log.d(TAG, listRefVids.getName())
@@ -211,7 +225,33 @@ class ActivityFeed : AppCompatActivity(), Player.Listener {
                             }
                     }
                 }
-            })
+
+            })}
+//        else if (sortType?.getString("sort") == "dailytop"){
+//            val colref = db.collection("videos").orderBy("views")
+//            colref.get()
+//                .addOnSuccessListener { documents ->
+//                    for(document in documents) {
+//                        val videoID = document.id
+//                        getUrlAsync(videoID)
+//                        videopage_title2.text = document.getString("title")
+//                        videopage_description.text = document.getString("desc")
+//                        val uploaderPic = document.getString("uploaderID")
+//                        val profileImage =
+//                            findViewById<ImageView>(R.id.uploaderPicture2)
+//                        val profileRef = storageReference.child(
+//                            "users/" + uploaderPic + "/profile.jpg"
+//                        )
+//                        profileRef.downloadUrl.addOnSuccessListener { uri ->
+//                            Picasso.get().load(uri).into(profileImage)
+//                        }
+//                    }
+//                }
+//            var vidname = item.name.dropLast(4)
+//            Log.d(TAG, "Videos here:" + vidname)
+//            Log.d(TAG, "Checking " + item.name)
+//            val docRef = db.collection("videos").document(vidname)
+//        }
     }
 
 }
